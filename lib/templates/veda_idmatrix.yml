@@ -3,5 +3,5 @@
 # The filename in the lib/config directory is included in the gitignore file
 # Do not change the file in the lib/templates directory
 url: 'https://ctaau.vedaxml.com/cta/sys2/idmatrix-v4'
-access_code: 'fill in your access_code here'
-password: 'fill in your password here'
+access_code: 
+password: 

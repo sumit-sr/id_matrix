@@ -12,4 +12,31 @@ ActiveRecord::Base.establish_connection(
   )
 require_relative 'spec/schema'
 
-puts "#access: #{VedaIdmatrix::Request.access}"
+# begin
+#   File.read('lib/config/veda_idmatrix.yml')
+#   puts "Congratulations you have copied lib/templates/veda_idmatrix.yml to lib/templates/veda_idmatrix.yml"
+# rescue
+#   puts "You have not copied lib/templates/veda_idmatrix.yml to lib/templates/veda_idmatrix.yml"
+#   puts "Please do so and run this file again"
+#   exit
+# end
+
+
+puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
+
+# if VedaIdmatrix::Request.access[:access_code].nil?
+#   puts "There is no access_code specified in lib/config/veda_idmatrix.yml"
+#   puts "Please add your access code and run this file again"
+#   exit
+# elsif VedaIdmatrix::Request.access[:password].nil?
+#   puts "There is no password specified in lib/config/veda_idmatrix.yml"
+#   puts "Please add your password and run this file again"
+# elsif VedaIdmatrix::Request.access[:url].nil?
+#   puts "You have removed the url in lib/config/veda_idmatrix.yml"
+#   puts "It should be 'https://ctaau.vedaxml.com/cta/sys2/idmatrix-v4'"
+#   exit
+# else
+#   puts "Your access details are set!"
+# end
+
+  
