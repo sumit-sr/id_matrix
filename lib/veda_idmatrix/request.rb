@@ -33,7 +33,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def schema
-    # fname = File.expand_path(File.dirname(__FILE__) + '/idmatrix-v4-0-2.xsd')
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-2.xsd', File.dirname(__FILE__) )
     File.read(fname)
   end
