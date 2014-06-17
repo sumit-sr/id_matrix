@@ -1,5 +1,6 @@
-require "veda_idmatrix/version"
+require 'veda_idmatrix/version'
+require 'veda_idmatrix/request'
 
 module VedaIdmatrix
-  # Your code goes here...
+
 end
