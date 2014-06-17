@@ -3,11 +3,11 @@ require 'veda_idmatrix'
 require 'shoulda/matchers'
 Bundler.setup
 
-# ActiveRecord::Base.establish_connection(
-#   :adapter => 'sqlite3',
-#   :database => ':memory:'
-#   )
-# require 'schema'
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => ':memory:'
+  )
+require 'schema'
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
