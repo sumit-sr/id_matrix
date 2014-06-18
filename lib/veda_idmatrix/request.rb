@@ -1,5 +1,8 @@
 class VedaIdmatrix::Request < ActiveRecord::Base
   self.table_name = "veda_idmatrix_requests"
+
+  serialize :access
+  serialize :entity
   
   validates :entity, presence: true
   after_initialize :set_defaults, :to_soap
@@ -144,6 +147,27 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       </soapenv:Header>
       <soapenv:Body>#{xml_message}</soapenv:Body>
     </soapenv:Envelope>"
+  end
+
+  def validate_xml
+    if self.xml
+      xsd = Nokogiri::XML::Schema(self.schema)
+      doc = Nokogiri::XML(self.xml)
+      xsd.validate(doc).each do |error|
+        error.message
+      end
+    else
+      "No xml to validate! - run to_soap"
+    end
+  end
+
+  def post
+    if self.soap
+      headers = {'Content-Type' => 'text/xml', 'Accept' => 'text/xml'}
+      HTTParty.post(self.access[:url], :body => self.soap, :headers => headers)
+    else
+      "No soap envelope to post! - run to_soap"
+    end
   end
 
 end

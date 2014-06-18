@@ -81,6 +81,19 @@ describe VedaIdmatrix::Request do
             expect(request.xml).to eq(nil)
           end
         end
+
+        describe ".validate_xml" do
+          it "returns error message" do
+            expect(request.validate_xml).to eq("No xml to validate! - run to_soap")          
+          end
+        end
+
+        describe ".post" do
+          it "return error message" do
+            expect(request.post).to eq("No soap envelope to post! - run to_soap")
+          end
+        end
+
       end
 
       describe "with entity hash" do
@@ -191,10 +204,20 @@ describe VedaIdmatrix::Request do
           it "returns not nil" do
             expect(request.access).to_not be(nil)
           end
+
+          it "can save" do
+            request.save
+            expect(request.access).to_not be(nil)
+          end
         end 
 
         describe ".entity" do
           it "returns not nil" do
+            expect(request.entity).to_not be(nil)
+          end
+
+          it "can save" do
+            request.save
             expect(request.entity).to_not be(nil)
           end
         end
@@ -209,6 +232,11 @@ describe VedaIdmatrix::Request do
           it "returns soap body" do
             expect(request.to_soap).to_not eq("No entity details - set your entity hash")
           end
+
+          it "sets .soap" do
+            request.to_soap
+            expect(request.soap).to_not eq(nil)
+          end 
 
           it "runs after initialize" do
             expect(request.soap).to_not eq(nil)
@@ -238,19 +266,23 @@ describe VedaIdmatrix::Request do
           end
         end
 
-        # describe ".add_envelope" do
-        #   it "returns soap envelope string" do
-        #     expect(request.add_envelope(self.xml, self.access[:url], self.access[:access_code], self.access[:password], 'message_id').class).to eq(String)
-        #   end
-        # end
-      
         describe ".id_matrix_operation" do
           it "returns hash" do
             expect(request.id_matrix_operation.class).to eq(Hash)
           end
         end
 
+        describe ".validate_xml" do
+          it "returns array" do
+            expect(request.validate_xml.class).to eq(Array)          
+          end
+        end
 
+        describe ".post" do
+          it "returns 200 status" do
+            expect(request.post.code).to eq(200)
+          end
+        end
 
 
       end
