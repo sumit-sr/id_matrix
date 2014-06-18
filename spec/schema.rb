@@ -16,6 +16,7 @@ self.verbose = false
     t.text :xml
     t.text :struct
     t.text :match
+    t.boolean :success
     t.integer :request_id
     t.timestamps
   end
