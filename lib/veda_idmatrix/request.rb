@@ -1,6 +1,6 @@
 class VedaIdmatrix::Request < ActiveRecord::Base
   self.table_name = "veda_idmatrix_requests"
-
+  has_one :response, dependent: :destroy
   serialize :access
   serialize :entity
   
@@ -168,6 +168,11 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     else
       "No soap envelope to post! - run to_soap"
     end
+  end
+
+  def post_and_capture
+    post = self.post
+    VedaIdmatrix::Response.new(xml: post.body, headers: post.headers, code: post.code, success: post.success?, request_id: self.id) 
   end
 
 end

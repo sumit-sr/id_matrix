@@ -2,6 +2,7 @@ require 'spec_helper'
 
 
 describe VedaIdmatrix::Request do
+  it { should have_one(:response).dependent(:destroy) }
   it { should validate_presence_of(:entity) }
 
   describe "needs developer veda idmatrix config file" do
@@ -278,11 +279,17 @@ describe VedaIdmatrix::Request do
           end
         end
 
-        describe ".post" do
-          it "returns 200 status" do
-            expect(request.post.code).to eq(200)
-          end
-        end
+        # describe ".post" do
+        #   it "returns 200 status" do
+        #     expect(request.post.code).to eq(200)
+        #   end
+        # end
+
+        # describe ".post_and_capture" do
+        #   it "returns new Response instance" do
+        #     expect(request.post_and_capture.class).to eq(VedaIdmatrix::Response)
+        #   end
+        # end
 
 
       end
