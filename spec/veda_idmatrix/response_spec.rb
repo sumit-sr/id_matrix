@@ -1,6 +1,5 @@
 require 'spec_helper'
 
-
 describe VedaIdmatrix::Response do
   it { should belong_to(:request).dependent(:destroy) }
   # describe "with post" do
@@ -81,13 +80,38 @@ describe VedaIdmatrix::Response do
     }
 
     let(:request) { VedaIdmatrix::Request.new(entity: entity_hash) } 
+    let(:response) { request.post_and_capture}
+    describe "created by request.post_and_capture with valid details" do
+      describe ".code" do
+        it "returns status code" do
+          expect(response.code).to be(200)
+        end  
+      end
 
-    # describe "with invalid url" do
-    #   it "returns error message" do
-    #     request.access = {url: "myurl.com"}
-    #     @post = request.post  
-    #   end  
+      describe ".headers" do
+        it "returns headers" do
+          expect(response.headers).to include("content-type")
+        end  
+      end
+
+      describe ".success?" do
+        it "returns boolean of post action" do
+          expect(response.success?).to be(true)
+        end  
+      end
+
+      describe ".request_id" do
+        it "returns request_id" do
+          expect(response.request_id).to be(request.id)
+        end  
+      end
+
+      describe ".xml" do
+        it "returns xml response body" do
+          expect(response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
+        end  
+      end
       
-    # end
+    end
 
 end
