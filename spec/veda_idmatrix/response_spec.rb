@@ -111,7 +111,22 @@ describe VedaIdmatrix::Response do
           expect(response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
         end  
       end
-      
+
+      describe ".to_struct" do
+        it "returns struct of response body" do
+          expect(response.to_struct.class).to be(RecursiveOpenStruct)
+        end
+
+        it "sets .struct" do
+          response.to_struct
+          expect(response.struct).to_not be(nil)
+        end
+
+        it "runs after initialize" do
+          expect(response.struct).to_not be(nil)
+        end
+      end
+    
     end
 
 end
