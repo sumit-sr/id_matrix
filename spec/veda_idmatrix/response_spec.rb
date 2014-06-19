@@ -2,9 +2,15 @@ require 'spec_helper'
 
 describe VedaIdmatrix::Response do
   it { should belong_to(:request).dependent(:destroy) }
-  # describe "with post" do
+  it { should validate_presence_of(:request_id) }
+  it { should validate_presence_of(:xml) }
+  it { should validate_presence_of(:code) }
+  it { should validate_presence_of(:headers) }
+  it { should validate_presence_of(:success) }
 
-    entity_hash = {
+  # describe "with post" do
+  before(:all) do
+    @entity_hash = {
       :family_name => "Potter",
       :first_given_name => "James",
       :other_given_name => "Harry",
@@ -78,52 +84,64 @@ describe VedaIdmatrix::Response do
       :device_intelligence_org_id => "org-abc",
       :device_intelligence_session_id => "X123"
     }
+  end
 
-    let(:request) { VedaIdmatrix::Request.new(entity: entity_hash) } 
-    let(:response) { request.post_and_capture}
+    
     describe "created by request.post_and_capture with valid details" do
+
+      before(:all) do
+        @request = VedaIdmatrix::Request.new(entity: @entity_hash) 
+        @response = @request.post_and_capture
+      end
+
       describe ".code" do
         it "returns status code" do
-          expect(response.code).to be(200)
+          expect(@response.code).to be(200)
         end  
       end
 
       describe ".headers" do
         it "returns headers" do
-          expect(response.headers).to include("content-type")
+          expect(@response.headers).to include("content-type")
         end  
       end
 
       describe ".success?" do
         it "returns boolean of post action" do
-          expect(response.success?).to be(true)
+          expect(@response.success?).to be(true)
         end  
       end
 
       describe ".request_id" do
         it "returns request_id" do
-          expect(response.request_id).to be(request.id)
+          expect(@response.request_id).to be(@request.id)
         end  
       end
 
       describe ".xml" do
         it "returns xml response body" do
-          expect(response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
+          expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
         end  
       end
 
       describe ".to_struct" do
         it "returns struct of response body" do
-          expect(response.to_struct.class).to be(RecursiveOpenStruct)
+          expect(@response.to_struct.class).to be(RecursiveOpenStruct)
         end
 
         it "sets .struct" do
-          response.to_struct
-          expect(response.struct).to_not be(nil)
+          @response.to_struct
+          expect(@response.struct).to_not be(nil)
         end
 
         it "runs after initialize" do
-          expect(response.struct).to_not be(nil)
+          expect(@response.struct).to_not be(nil)
+        end
+      end
+
+      describe ".error" do
+        it "returns message" do
+          expect(@response.error).to be("No error")
         end
       end
     
