@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe VedaIdmatrix::Response do
   it { should belong_to(:request).dependent(:destroy) }
-  it { should validate_presence_of(:request_id) }
+  it { should validate_presence_of(:request) }
   it { should validate_presence_of(:xml) }
   it { should validate_presence_of(:code) }
   it { should validate_presence_of(:headers) }
@@ -87,64 +87,212 @@ describe VedaIdmatrix::Response do
   end
 
     
-    describe "created by request.post_and_capture with valid details" do
+  describe "created by request.post_and_capture with valid access details" do
 
-      before(:all) do
-        @request = VedaIdmatrix::Request.new(entity: @entity_hash) 
-        @response = @request.post_and_capture
-      end
-
-      describe ".code" do
-        it "returns status code" do
-          expect(@response.code).to be(200)
-        end  
-      end
-
-      describe ".headers" do
-        it "returns headers" do
-          expect(@response.headers).to include("content-type")
-        end  
-      end
-
-      describe ".success?" do
-        it "returns boolean of post action" do
-          expect(@response.success?).to be(true)
-        end  
-      end
-
-      describe ".request_id" do
-        it "returns request_id" do
-          expect(@response.request_id).to be(@request.id)
-        end  
-      end
-
-      describe ".xml" do
-        it "returns xml response body" do
-          expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
-        end  
-      end
-
-      describe ".to_struct" do
-        it "returns struct of response body" do
-          expect(@response.to_struct.class).to be(RecursiveOpenStruct)
-        end
-
-        it "sets .struct" do
-          @response.to_struct
-          expect(@response.struct).to_not be(nil)
-        end
-
-        it "runs after initialize" do
-          expect(@response.struct).to_not be(nil)
-        end
-      end
-
-      describe ".error" do
-        it "returns message" do
-          expect(@response.error).to be("No error")
-        end
-      end
-    
+    before(:all) do
+      @request = VedaIdmatrix::Request.new(entity: @entity_hash) 
+      @response = @request.post_and_capture
     end
 
+    describe "is valid" do
+      it "returns true" do
+        expect(@response.valid?).to be(true)
+      end
+
+      it "has all the details" do
+        expect(@response).to be(nil)
+      end
+    end
+
+    describe ".code" do
+      it "returns status code" do
+        expect(@response.code).to be(200)
+      end  
+    end
+
+    describe ".headers" do
+      it "returns headers" do
+        expect(@response.headers).to include("content-type")
+      end  
+    end
+
+    describe ".success?" do
+      it "returns boolean of post action" do
+        expect(@response.success?).to be(true)
+      end  
+    end
+
+    describe ".request_id" do
+      it "returns request_id" do
+        expect(@response.request_id).to eq(@request.id)
+      end  
+    end
+
+    describe ".xml" do
+      it "returns xml response body" do
+        expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
+      end  
+    end
+
+    describe ".to_struct" do
+      it "returns struct of response body" do
+        expect(@response.to_struct.class).to be(RecursiveOpenStruct)
+      end
+
+      it "sets .struct" do
+        @response.to_struct
+        expect(@response.struct).to_not be(nil)
+      end
+
+      it "runs after initialize" do
+        expect(@response.struct).to_not be(nil)
+      end
+    end
+
+    describe ".error" do
+      it "returns message" do
+        expect(@response.error).to eq("No error")
+      end
+    end
+  
+  end
+
+  describe "created by request.post_and_capture with invalid access details" do
+
+    before(:all) do
+      @request = VedaIdmatrix::Request.new(access: { 
+        url: VedaIdmatrix::Request.access[:url], 
+        user_code: "xxxxx",
+        password: "xxxxx",
+        },entity: @entity_hash) 
+      @response = @request.post_and_capture
+    end
+
+    describe "is valid" do
+      
+      it "returns true" do
+        expect(@response.valid?).to be(true)
+      end
+
+      it "can save" do
+        expect(@response.save!).to eq(nil)
+      end
+    end
+
+    describe ".code" do
+      it "returns server status code" do
+        expect(@response.code).to eq(500)
+      end
+    end
+
+    describe ".headers" do
+      it "returns headers" do
+        expect(@response.headers).to include("content-type")
+      end  
+    end
+
+    describe ".success?" do
+      it "returns boolean of post action" do
+        expect(@response.success?).to be(false)
+      end  
+    end
+
+    describe ".request_id" do
+      it "returns request_id" do
+        expect(@response.request_id).to eq(@request.id)
+      end  
+    end
+
+    describe ".xml" do
+      it "returns xml response body" do
+        expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
+      end  
+    end
+
+    describe ".to_struct" do
+      it "returns struct of response body" do
+        expect(@response.to_struct.class).to eq(String)
+      end
+
+      it "returns error message" do
+        expect(@response.to_struct).to eq("No struct was created, see .error")
+      end
+    end
+
+    describe ".error" do
+      it "returns message" do
+        expect(@response.error).to include("Authentication Required")
+      end
+    end      
+  end
+  describe "created by request.post_and_capture with incorrect password" do
+
+    before(:all) do
+      @request = VedaIdmatrix::Request.new(access: { 
+        url: VedaIdmatrix::Request.access[:url], 
+        access_code: VedaIdmatrix::Request.access[:access_code],
+        password: "xxxxx",
+        },entity: @entity_hash) 
+      @response = @request.post_and_capture
+    end
+
+    it "is valid" do
+      expect(@response.valid?).to be(true)
+    end
+
+    describe ".code" do
+      it "returns server status code" do
+        expect(@response.code).to eq(500)
+      end
+    end
+
+    describe ".headers" do
+      it "returns headers" do
+        expect(@response.headers).to include("content-type")
+      end  
+    end
+
+    describe ".success?" do
+      it "returns boolean of post action" do
+        expect(@response.success?).to be(false)
+      end  
+    end
+
+    
+    describe ".success" do
+      it "returns boolean of post action" do
+        expect(@response.success).to be(false)
+      end  
+    end
+
+    describe ".request_id" do
+      it "returns request_id" do
+        expect(@response.request_id).to eq(@request.id)
+      end  
+    end
+
+    describe ".xml" do
+      it "returns xml response body" do
+        expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
+      end  
+    end
+
+    describe ".to_struct" do
+      it "returns string in case of error" do
+        expect(@response.to_struct.class).to eq(String)
+      end
+
+      it "returns error message" do
+        expect(@response.to_struct).to eq("No struct was created, see .error")
+      end
+    end
+
+    describe ".error" do
+      it "returns message" do
+        expect(@response.error).to include("Authentication Failed")
+      end
+    end
+
+      
+  end
 end

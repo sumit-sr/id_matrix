@@ -95,8 +95,11 @@ require_relative 'spec/schema'
           :device_intelligence_session_id => "X123"
         }
 
-puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
+@req = VedaIdmatrix::Request.new(entity: @entity_hash)
 
+
+puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
+puts "You have a @req object to use"
 
 
 # if VedaIdmatrix::Request.access[:access_code].nil?

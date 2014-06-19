@@ -1,6 +1,7 @@
 class VedaIdmatrix::Request < ActiveRecord::Base
   self.table_name = "veda_idmatrix_requests"
-  has_one :response, dependent: :destroy
+  self.primary_key = :id
+  has_one :response, dependent: :destroy, inverse_of: :request
   serialize :access
   serialize :entity
   
@@ -172,6 +173,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
   def post_and_capture
     post = self.post
+    # self.save
     VedaIdmatrix::Response.new(xml: post.body, headers: post.headers, code: post.code, success: post.success?, request_id: self.id) 
   end
 

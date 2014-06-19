@@ -289,9 +289,14 @@ describe VedaIdmatrix::Request do
           it "returns new Response instance" do
             expect(request.post_and_capture.class).to eq(VedaIdmatrix::Response)
           end
+
+          # it "saves the instance" do
+          #   request.post_and_capture!
+          #   expect(request.id).to_not be(nil)
+          # end
         end
 
-        
+
 
 
       end
