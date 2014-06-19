@@ -9,20 +9,35 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   after_initialize :set_defaults, :to_soap
 
   def self.access
-    begin
-      dev_config = YAML.load_file( File.expand_path( '../../lib/config/veda_idmatrix.yml', File.dirname(__FILE__) ) )
+    if !defined?(Rails).nil?
+      rails_config = YAML.load_file('config/veda_idmatrix.yml')
+      access = {
+        :url => rails_config["url"],
+        :access_code => rails_config["access_code"],
+        :password => rails_config["password"],
+        }
+      if access[:access_code].nil?
+        "Fill in your veda details in 'config/veda_config.yml"
+      else
+        access
+      end
 
-      {
-        :url => dev_config["url"],
-        :access_code => dev_config["access_code"],
-        :password => dev_config["password"]
-      }
-    rescue 
-      {
-        :url => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
-        :access_code => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
-        :password => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details."
-      }
+    elsif defined?(Rails).nil?
+      begin
+        dev_config = YAML.load_file( File.expand_path( '../../lib/config/veda_idmatrix.yml', File.dirname(__FILE__) ) )
+
+        {
+          :url => dev_config["url"],
+          :access_code => dev_config["access_code"],
+          :password => dev_config["password"]
+        }
+      rescue 
+        {
+          :url => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
+          :access_code => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
+          :password => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details."
+        }
+      end
     end
   end
 
