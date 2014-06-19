@@ -5,6 +5,7 @@ require 'veda_idmatrix/response'
 require 'nokogiri'
 require 'httparty'
 require 'recursive-open-struct'
+require 'veda_idmatrix/railtie' if defined?(Rails)
 
 module VedaIdmatrix
 

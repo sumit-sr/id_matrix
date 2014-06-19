@@ -3,11 +3,11 @@ class VedaIdmatrix::Response < ActiveRecord::Base
   self.primary_key = :id
   belongs_to :request, dependent: :destroy, inverse_of: :response
 
-  validates :request, presence: true
-  validates :xml, presence: true
-  validates :code, presence: true
-  validates :headers, presence: true
-  validates :success, presence: true
+  # validates :request, presence: true
+  # validates :xml, presence: true
+  # validates :code, presence: true
+  # validates :headers, presence: true
+  # validates :success, presence: true
 
   serialize :headers
   serialize :struct
