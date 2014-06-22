@@ -6,7 +6,7 @@ self.verbose = false
     t.text :soap
     t.text :access
     t.text :entity
-    t.text :struct
+    t.text :enquiry
     t.timestamps
   end
 

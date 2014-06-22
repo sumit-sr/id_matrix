@@ -8,7 +8,6 @@ describe VedaIdmatrix::Response do
   # it { should validate_presence_of(:headers) }
   # it { should validate_presence_of(:success) }
 
-  # describe "with post" do
   before(:all) do
     @entity_hash = {
       :family_name => "Potter",
@@ -87,11 +86,12 @@ describe VedaIdmatrix::Response do
   end
 
     
-  describe "created by request.post_and_capture with valid access details" do
+  describe "created by request.post with valid access details" do
 
     before(:all) do
       @request = VedaIdmatrix::Request.new(entity: @entity_hash) 
-      @response = @request.post_and_capture
+      @post = @request.post
+      @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
 
     describe "is valid" do
@@ -157,15 +157,16 @@ describe VedaIdmatrix::Response do
   
   end
 
-  describe "created by request.post_and_capture with invalid access details" do
+  describe "created by request.post with invalid access details" do
 
     before(:all) do
       @request = VedaIdmatrix::Request.new(access: { 
         url: VedaIdmatrix::Request.access[:url], 
         user_code: "xxxxx",
         password: "xxxxx",
-        },entity: @entity_hash) 
-      @response = @request.post_and_capture
+        },entity: @entity_hash)
+      @post = @request.post   
+      @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
 
     describe "is valid" do
@@ -225,15 +226,16 @@ describe VedaIdmatrix::Response do
       end
     end      
   end
-  describe "created by request.post_and_capture with incorrect password" do
+  describe "created by request.post with incorrect password" do
 
     before(:all) do
       @request = VedaIdmatrix::Request.new(access: { 
         url: VedaIdmatrix::Request.access[:url], 
         access_code: VedaIdmatrix::Request.access[:access_code],
         password: "xxxxx",
-        },entity: @entity_hash) 
-      @response = @request.post_and_capture
+        },entity: @entity_hash)
+      @post = @request.post
+      @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
 
     it "is valid" do

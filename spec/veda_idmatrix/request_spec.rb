@@ -254,6 +254,79 @@ describe VedaIdmatrix::Request do
           it "returns xml message body" do
             expect(request.xml).to_not eq(nil)
           end
+
+          it "includes 'family-name' in xml" do
+            expect(request.xml).to include('<idm:family-name>Potter</idm:family-name>')
+          end
+
+          it "includes 'first-given-name' in xml" do
+            expect(request.xml).to include('<idm:first-given-name>James</idm:first-given-name>')
+          end
+
+          it "includes 'other-given-name' in xml" do
+            expect(request.xml).to include('<idm:other-given-name>Harry</idm:other-given-name>')
+          end
+
+          it "includes 'date-of-birth' in xml" do
+            expect(request.xml).to include('<idm:date-of-birth>1980-07-31</idm:date-of-birth>')
+          end
+
+          it "includes 'gender' in xml" do
+            expect(request.xml).to include('<idm:gender>male</idm:gender>')
+          end
+
+          it "includes 'property' in xml" do
+            expect(request.xml).to include('<idm:property>Potter Manor</idm:property>')
+          end
+
+          it "includes 'unit-number' in xml" do
+            expect(request.xml).to include('<idm:unit-number>3</idm:unit-number>')
+          end
+
+          it "includes 'street-number' in xml" do
+            expect(request.xml).to include('<idm:street-number>4</idm:street-number>')
+          end
+
+          it "includes 'street-name' in xml" do
+            expect(request.xml).to include('<idm:street-name>Privet</idm:street-name>')
+          end
+          
+          it "includes 'street-type' in xml" do
+            expect(request.xml).to include('<idm:street-type>Drive</idm:street-type>')
+          end
+
+          it "includes 'suburb' in xml" do
+            expect(request.xml).to include('<idm:suburb>Little Whinging</idm:suburb>')
+          end
+
+          it "includes 'state' in xml" do
+            expect(request.xml).to include('<idm:state>NSW</idm:state>')
+          end
+
+          it "includes 'postcode' in xml" do
+            expect(request.xml).to include('<idm:postcode>2999</idm:postcode>')
+          end
+
+          it "includes 'home-phone-number' in xml" do
+            expect(request.xml).to include('<idm:home-phone-number verify="true">0312345678</idm:home-phone-number>')
+          end
+
+          it "includes 'mobile-phone-number' in xml" do
+            expect(request.xml).to include('<idm:mobile-phone-number verify="true">0487654321</idm:mobile-phone-number>')
+          end
+
+          it "includes 'email-address' in xml" do
+            expect(request.xml).to include('<idm:email-address>harry.potter@example.com</idm:email-address>')
+          end
+
+          it "includes 'drivers-licence-state-code' in xml" do
+            expect(request.xml).to include('<idm:state-code>NSW</idm:state-code>')
+          end
+
+          it "includes 'drivers-licence-number' in xml" do
+            expect(request.xml).to include('<idm:number>1234567890</idm:number>')
+          end
+
         end
 
         describe ".to_xml_body" do
@@ -279,22 +352,13 @@ describe VedaIdmatrix::Request do
           end
         end
 
-        describe ".post" do
-          it "returns 200 status" do
-            expect(request.post.code).to eq(200)
-          end
-        end
+        # describe ".post" do
+        #   it "returns 200 status" do
+        #     expect(request.post.code).to eq(200)
+        #   end
+        # end
 
-        describe ".post_and_capture" do
-          it "returns new Response instance" do
-            expect(request.post_and_capture.class).to eq(VedaIdmatrix::Response)
-          end
-
-          # it "saves the instance" do
-          #   request.post_and_capture!
-          #   expect(request.id).to_not be(nil)
-          # end
-        end
+        
 
 
 

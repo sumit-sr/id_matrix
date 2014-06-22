@@ -16,23 +16,25 @@ Then run install generator:
 	
 	rails g veda_idmatrix:install
 
+Then run migrations:
+
+    rake db:migrate    
+
 Fill in your veda user_code and password in this file:
 	
 	config/veda_idmatrix.yml 
 
-Then run migrations:
 
-	rake db:migrate
 
 ## Usage
 
 ### Request
 
 	with filled in config/veda_idmatrix.yml:
-	request = VedaIdmatrix::Request.create(entity: entity_hash, enquiry: enquiry_hash) 
+	request = VedaIdmatrix::Request.create(entity: entity_hash) 
 	
 	overriding config/veda_idmatrix.yml:
-    request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
+    request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash)
 
 Attributes for access_hash(optional):
 
@@ -64,13 +66,6 @@ Attributes for entity_hash:
     :drivers_licence_number => "1234567890",
     :drivers_licence_card_number => "1234567890",
     
-Attributes for enquiry_hash:
-
-    :enquiry_type
-    :account_type_code
-    :currency_code
-    :enquiry_amount
-    :client_reference
 
 #### Class Methods:
 
@@ -80,11 +75,8 @@ Attributes for enquiry_hash:
 
     request.access - Access Hash
     request.entity - Entity Hash
-    request.enquiry - Enquiry Hash
     request.soap - Soap envelope of request
     request.xml - XML message body of request
-    request.validate_xml - Validate the xml
-    request.struct - Struct of body
     request.post - Post to Veda Idmatrix
 
 ### Response

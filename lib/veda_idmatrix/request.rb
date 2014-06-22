@@ -186,10 +186,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     end
   end
 
-  def post_and_capture
-    post = self.post
-    # self.save
-    VedaIdmatrix::Response.new(xml: post.body, headers: post.headers, code: post.code, success: post.success?, request_id: self.id) 
-  end
+  
 
 end
