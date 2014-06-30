@@ -20,6 +20,14 @@ require_relative 'spec/schema'
 #   puts "Please do so and run this file again"
 #   exit
 # end
+
+@config = YAML.load_file('dev_config.yml')
+      @access_hash = 
+        {
+          :url => @config["url"],
+          :access_code => @config["access_code"],
+          :password => @config["password"]
+        }
 @entity_hash = {
           :family_name => "Potter",
           :first_given_name => "James",
@@ -95,10 +103,15 @@ require_relative 'spec/schema'
           :device_intelligence_session_id => "X123"
         }
 
-@req = VedaIdmatrix::Request.new(entity: @entity_hash)
+      @enquiry_hash = {
+        :client_reference => "123456", 
+        :reason_for_enquiry => "Test"
+      }  
+
+@req = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
 
 
-puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
+# puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
 puts "You have a @req object to use"
 
 

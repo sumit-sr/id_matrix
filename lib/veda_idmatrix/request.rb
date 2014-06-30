@@ -4,52 +4,55 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   has_one :response, dependent: :destroy, inverse_of: :request
   serialize :access
   serialize :entity
+  serialize :enquiry
   
+  validates :access, presence: true
   validates :entity, presence: true
-  after_initialize :set_defaults, :to_soap
+  validates :enquiry, presence: true
+  after_initialize :to_soap
 
-  def self.access
-    if !defined?(Rails).nil?
-      rails_config = YAML.load_file('config/veda_idmatrix.yml')
-      access = {
-        :url => rails_config["url"],
-        :access_code => rails_config["access_code"],
-        :password => rails_config["password"],
-        }
-      if access[:access_code].nil?
-        "Fill in your veda details in 'config/veda_config.yml"
-      else
-        access
-      end
+  # def self.access
+  #   if !defined?(Rails).nil?
+  #     rails_config = YAML.load_file('config/veda_idmatrix.yml')
+  #     access = {
+  #       :url => rails_config["url"],
+  #       :access_code => rails_config["access_code"],
+  #       :password => rails_config["password"],
+  #       }
+  #     if access[:access_code].nil?
+  #       "Fill in your veda details in 'config/veda_config.yml"
+  #     else
+  #       access
+  #     end
 
-    elsif defined?(Rails).nil?
-      begin
-        dev_config = YAML.load_file( File.expand_path( '../../lib/config/veda_idmatrix.yml', File.dirname(__FILE__) ) )
+  #   elsif defined?(Rails).nil?
+  #     begin
+  #       dev_config = YAML.load_file( File.expand_path( '../../lib/config/veda_idmatrix.yml', File.dirname(__FILE__) ) )
 
-        {
-          :url => dev_config["url"],
-          :access_code => dev_config["access_code"],
-          :password => dev_config["password"]
-        }
-      rescue 
-        {
-          :url => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
-          :access_code => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
-          :password => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details."
-        }
-      end
-    end
-  end
+  #       {
+  #         :url => dev_config["url"],
+  #         :access_code => dev_config["access_code"],
+  #         :password => dev_config["password"]
+  #       }
+  #     rescue 
+  #       {
+  #         :url => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
+  #         :access_code => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details.",
+  #         :password => "Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' and fill in access details."
+  #       }
+  #     end
+  #   end
+  # end
 
-  def set_defaults
-    if self.access.nil? 
-      self.access = {
-        :url => VedaIdmatrix::Request.access[:url],
-        :access_code => VedaIdmatrix::Request.access[:access_code],
-        :password => VedaIdmatrix::Request.access[:password]
-      }
-    end
-  end
+  # def set_defaults
+  #   if self.access.nil? 
+  #     self.access = {
+  #       :url => VedaIdmatrix::Request.access[:url],
+  #       :access_code => VedaIdmatrix::Request.access[:access_code],
+  #       :password => VedaIdmatrix::Request.access[:password]
+  #     }
+  #   end
+  # end
 
   def schema
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-2.xsd', File.dirname(__FILE__) )
@@ -66,7 +69,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def to_xml_body
-    doc = self.to_dom('request', self.id_matrix_operation, {:'client-reference'=>"Connect Guide Ref", :'reason-for-enquiry'=>"Connect Guide Reason"}).to_xml.gsub(/(<[\/]?)/,'\1idm:')
+    doc = self.to_dom('request', self.id_matrix_operation, {:'client-reference'=>self.enquiry[:client_reference], :'reason-for-enquiry'=>self.enquiry[:reason_for_enquiry]}).to_xml.gsub(/(<[\/]?)/,'\1idm:')
     self.xml = doc.gsub('<idm:?xml version="1.0"?>','')
   end
 
@@ -120,14 +123,14 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'state-code' => (self.entity[:drivers_licence_state_code]),
       :'number' => (self.entity[:drivers_licence_number])
     }
-    if self.entity[:drivers_licence_state_code] == "VIC"
-      drivers_licence_details = drivers_licence_details.merge(:"captcha-challenge" => (self.entity[:drivers_licence_captcha_challenge]))
-      drivers_licence_details = drivers_licence_details.merge(:"captcha-response" => (self.entity[:drivers_licence_captcha_response]))
-    end
+    # if self.entity[:drivers_licence_state_code] == "VIC"
+    #   drivers_licence_details = drivers_licence_details.merge(:"captcha-challenge" => (self.entity[:drivers_licence_captcha_challenge]))
+    #   drivers_licence_details = drivers_licence_details.merge(:"captcha-response" => (self.entity[:drivers_licence_captcha_response]))
+    # end
 
-    if self.entity[:drivers_licence_state_code] == "NSW"
-      drivers_licence_details = drivers_licence_details.merge(:"card-number" => (self.entity[:drivers_license_card_number]))
-    end
+    # if self.entity[:drivers_licence_state_code] == "NSW"
+    #   drivers_licence_details = drivers_licence_details.merge(:"card-number" => (self.entity[:drivers_license_card_number]))
+    # end
 
     return {
         :'individual-name' => individual_name,

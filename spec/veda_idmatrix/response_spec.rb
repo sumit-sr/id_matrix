@@ -9,6 +9,14 @@ describe VedaIdmatrix::Response do
   # it { should validate_presence_of(:success) }
 
   before(:all) do
+    @config = YAML.load_file('dev_config.yml')
+    @access_hash = 
+      {
+        :url => @config["url"],
+        :access_code => @config["access_code"],
+        :password => @config["password"]
+      }
+
     @entity_hash = {
       :family_name => "Potter",
       :first_given_name => "James",
@@ -89,7 +97,7 @@ describe VedaIdmatrix::Response do
   describe "created by request.post with valid access details" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(entity: @entity_hash) 
+      @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash) 
       @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
@@ -160,11 +168,13 @@ describe VedaIdmatrix::Response do
   describe "created by request.post with invalid access details" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(access: { 
-        url: VedaIdmatrix::Request.access[:url], 
-        user_code: "xxxxx",
-        password: "xxxxx",
-        },entity: @entity_hash)
+      @request = VedaIdmatrix::Request.new(
+        access: { 
+          url: @config["url"], 
+          user_code: "xxxxx",
+          password: "xxxxx",
+          },
+        entity: @entity_hash)
       @post = @request.post   
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
@@ -229,11 +239,13 @@ describe VedaIdmatrix::Response do
   describe "created by request.post with incorrect password" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(access: { 
-        url: VedaIdmatrix::Request.access[:url], 
-        access_code: VedaIdmatrix::Request.access[:access_code],
-        password: "xxxxx",
-        },entity: @entity_hash)
+      @request = VedaIdmatrix::Request.new(
+        access: { 
+          url: @config["url"], 
+          access_code: @config["access_code"],
+          password: "xxxxx",
+          },
+        entity: @entity_hash)
       @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
