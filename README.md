@@ -80,7 +80,7 @@ Attributes for enquiry_hash
 
 #### Instance Methods:
 
-    response.struct - Struct of whole response
+    response.as_hash - Hash of whole response
     response.xml - XML of response
     response.code - Response status code
     response.headers - Response headers

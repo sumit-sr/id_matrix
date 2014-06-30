@@ -103,10 +103,11 @@ require_relative 'spec/schema'
       }  
 
 @req = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
-
+@post = @req.post
+@res = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.header, code: @post.code, success: @post.success?, request_id: @req.id)
 
 # puts "This is the result of VedaIdmatrix::Request.access: #{VedaIdmatrix::Request.access}"
-puts "You have a @req object to use"
+puts "You have a @req and @res object to use"
 
 
 # if VedaIdmatrix::Request.access[:access_code].nil?

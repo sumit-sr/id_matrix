@@ -1,26 +1,12 @@
 class VedaIdmatrix::Response < ActiveRecord::Base
   self.table_name = "veda_idmatrix_responses"
-  self.primary_key = :id
   belongs_to :request, dependent: :destroy, inverse_of: :response
-
-  # validates :xml, presence: true
-  # validates :code, presence: true
-  # validates :headers, presence: true
-  # validates :success, presence: true
 
   serialize :headers
   serialize :struct
   serialize :as_hash
 
-  after_initialize :to_hash, :to_struct
-
-  def to_struct
-    if self.xml && self.success?
-      self.struct = RecursiveOpenStruct.new(self.as_hash)
-    else
-      "No struct was created, see .error"
-    end
-  end
+  after_initialize :to_hash
 
   def to_hash
     if self.xml

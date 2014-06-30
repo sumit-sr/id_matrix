@@ -2,12 +2,7 @@ require 'spec_helper'
 
 describe VedaIdmatrix::Response do
   it { should belong_to(:request).dependent(:destroy) }
-  # it { should validate_presence_of(:request) }
-  # it { should validate_presence_of(:xml) }
-  # it { should validate_presence_of(:code) }
-  # it { should validate_presence_of(:headers) }
-  # it { should validate_presence_of(:success) }
-
+  
   before(:all) do
     @config = YAML.load_file('dev_config.yml')
     @access_hash = 
@@ -111,10 +106,6 @@ describe VedaIdmatrix::Response do
       it "returns true" do
         expect(@response.valid?).to be(true)
       end
-
-      # it "has all the details" do
-      #   expect(@response).to be(nil)
-      # end
     end
 
     describe ".code" do
@@ -145,21 +136,6 @@ describe VedaIdmatrix::Response do
       it "returns xml response body" do
         expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
       end  
-    end
-
-    describe ".to_struct" do
-      it "returns struct of response body" do
-        expect(@response.to_struct.class).to be(RecursiveOpenStruct)
-      end
-
-      it "sets .struct" do
-        @response.to_struct
-        expect(@response.struct).to_not be(nil)
-      end
-
-      it "runs after initialize" do
-        expect(@response.struct).to_not be(nil)
-      end
     end
 
     describe ".as_hash" do
@@ -232,16 +208,6 @@ describe VedaIdmatrix::Response do
       end  
     end
 
-    describe ".to_struct" do
-      it "returns struct of response body" do
-        expect(@response.to_struct.class).to eq(String)
-      end
-
-      it "returns error message" do
-        expect(@response.to_struct).to eq("No struct was created, see .error")
-      end
-    end
-
     describe ".error" do
       it "returns message" do
         expect(@response.error).to include("Authentication Required")
@@ -304,17 +270,7 @@ describe VedaIdmatrix::Response do
       end  
     end
 
-    describe ".to_struct" do
-      it "returns string in case of error" do
-        expect(@response.to_struct.class).to eq(String)
-      end
-
-      it "returns error message" do
-        expect(@response.to_struct).to eq("No struct was created, see .error")
-      end
-    end
-
-    describe ".error" do
+   describe ".error" do
       it "returns message" do
         expect(@response.error).to include("Authentication Failed")
       end

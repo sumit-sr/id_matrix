@@ -4,11 +4,9 @@ class CreateVedaIdmatrixResponse < ActiveRecord::Migration
       t.text :headers
       t.integer :code
       t.text :xml
-      t.text :struct
       t.text :as_hash
       t.boolean :success
       t.integer :request_id
-
       t.timestamps
     end
   end
