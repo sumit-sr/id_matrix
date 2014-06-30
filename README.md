@@ -26,45 +26,48 @@ Then run migrations:
 ### Request
 
 	
-request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
+    request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
 
 Attributes for access_hash:
-{
-    :url => config["url"],
-    :access_code => config["access_code"],
-    :password => config["password"],
- }
+
+    {
+        :url => config["url"],
+        :access_code => config["access_code"],
+        :password => config["password"]
+    }
 
 Attributes for entity_hash:
-{
-    :family_name => "Potter",
-    :first_given_name => "James",
-    :other_given_name => "Harry",
-    :date_of_birth => "1980-07-31",
-    :gender => "male",
-    :current_address => {
-        :property => "Potter Manor",
-        :unit_number => "3",
-        :street_number => "4",
-        :street_name => "Privet",
-        :street_type => "Drive",
-        :suburb => "Little Whinging",
-        :state => "NSW",
-        :postcode => "2999",
-        },
-    :home_phone_number => "0312345678",
-    :mobile_phone_number => "0487654321",
-    :email_address => "harry.potter@example.com",
-    :drivers_licence_state_code => "NSW",
-    :drivers_licence_number => "1234567890",
-    :drivers_licence_card_number => "1234567890",
-}
 
-Attributes for enquiry_hash 
-{
-    :client_reference => "123456", 
-    :reason_for_enquiry => "Test"
-}     
+    {
+        :family_name => "Potter",
+        :first_given_name => "James",
+        :other_given_name => "Harry",
+        :date_of_birth => "1980-07-31",
+        :gender => "male",
+        :current_address => {
+            :property => "Potter Manor",
+            :unit_number => "3",
+            :street_number => "4",
+            :street_name => "Privet",
+            :street_type => "Drive",
+            :suburb => "Little Whinging",
+            :state => "NSW",
+            :postcode => "2999"
+            },
+        :home_phone_number => "0312345678",
+        :mobile_phone_number => "0487654321",
+        :email_address => "harry.potter@example.com",
+        :drivers_licence_state_code => "NSW",
+        :drivers_licence_number => "1234567890",
+        :drivers_licence_card_number => "1234567890"
+    }
+
+    Attributes for enquiry_hash 
+
+    {
+        :client_reference => "123456", 
+        :reason_for_enquiry => "Test"
+    }     
 
 #### Instance Methods:
 
