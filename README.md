@@ -20,30 +20,23 @@ Then run migrations:
 
     rake db:migrate    
 
-Fill in your veda user_code and password in this file:
-	
-	config/veda_idmatrix.yml 
-
-
 
 ## Usage
 
 ### Request
 
-	with filled in config/veda_idmatrix.yml:
-	request = VedaIdmatrix::Request.create(entity: entity_hash) 
 	
-	overriding config/veda_idmatrix.yml:
-    request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash)
+request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
 
-Attributes for access_hash(optional):
+Attributes for access_hash:
+{
+    :url => config["url"],
+    :access_code => config["access_code"],
+    :password => config["password"],
+ }
 
-    :url
-    :access_code
-    :password
-    
 Attributes for entity_hash:
-
+{
     :family_name => "Potter",
     :first_given_name => "James",
     :other_given_name => "Harry",
@@ -65,11 +58,13 @@ Attributes for entity_hash:
     :drivers_licence_state_code => "NSW",
     :drivers_licence_number => "1234567890",
     :drivers_licence_card_number => "1234567890",
-    
+}
 
-#### Class Methods:
-
-    Veda::Request.access - Veda access details hash as defined by 'config/veda_idmatrix.yml'
+Attributes for enquiry_hash 
+{
+    :client_reference => "123456", 
+    :reason_for_enquiry => "Test"
+}     
 
 #### Instance Methods:
 
@@ -85,19 +80,19 @@ Attributes for entity_hash:
 
 #### Instance Methods:
 
-    response.error - Response errors if any
     response.struct - Struct of whole response
     response.xml - XML of response
     response.code - Response status code
     response.headers - Response headers
-    response.success? - Boolean response if post was successful or not
-
+    response.success? - Returns true or false (based on Httparty response)
+    response.error - Response errors if any
+    
 
 ## Contributing
 
 1. Fork it ( http://github.com/<my-github-username>/veda_idmatrix/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
-3. See seed.rb file in root
+3. See dev.rb file in root
 4. Commit your changes (`git commit -am 'Add some feature'`)
 5. Push to the branch (`git push origin my-new-feature`)
 6. Create new Pull Request

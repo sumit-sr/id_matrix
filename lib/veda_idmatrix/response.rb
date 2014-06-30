@@ -10,12 +10,13 @@ class VedaIdmatrix::Response < ActiveRecord::Base
 
   serialize :headers
   serialize :struct
+  serialize :as_hash
 
-  after_initialize :to_struct
+  after_initialize :to_hash, :to_struct
 
   def to_struct
     if self.xml && self.success?
-      self.struct = RecursiveOpenStruct.new(self.to_hash)
+      self.struct = RecursiveOpenStruct.new(self.as_hash)
     else
       "No struct was created, see .error"
     end
@@ -23,7 +24,7 @@ class VedaIdmatrix::Response < ActiveRecord::Base
 
   def to_hash
     if self.xml
-      Hash.from_xml(self.xml)
+      self.as_hash = Hash.from_xml(self.xml)
     else
       "No hash was created because there was no xml"
     end

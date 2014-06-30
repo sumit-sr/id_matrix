@@ -1,10 +1,12 @@
 # Note for gem developer/contributer
-# Copy 'lib/templates/veda_idmatrix.yml' to 'lib/config/veda_idmatrix.yml' fill in access details.
-# The filename in the lib/config directory is included in the gitignore file
-# Do not change the file in the lib/templates directory
+# Create file called 'dev_config.yml' in your project root with the following:
+#
+# url: 'https://ctaau.vedaxml.com/cta/sys2/idmatrix-v4'
+# access_code: 'your access code'
+# password: 'your password'
 #
 # run 'bundle console'and then
-# load 'seed.rb' to load this seed data
+# load 'dev.rb' to load this seed data
 
 ActiveRecord::Base.establish_connection(
   :adapter => 'sqlite3',
@@ -12,14 +14,6 @@ ActiveRecord::Base.establish_connection(
   )
 require_relative 'spec/schema'
 
-# begin
-#   File.read('lib/config/veda_idmatrix.yml')
-#   puts "Congratulations you have copied lib/templates/veda_idmatrix.yml to lib/templates/veda_idmatrix.yml"
-# rescue
-#   puts "You have not copied lib/templates/veda_idmatrix.yml to lib/templates/veda_idmatrix.yml"
-#   puts "Please do so and run this file again"
-#   exit
-# end
 
 @config = YAML.load_file('dev_config.yml')
       @access_hash = 

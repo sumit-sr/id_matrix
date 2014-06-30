@@ -162,6 +162,12 @@ describe VedaIdmatrix::Response do
       end
     end
 
+    describe ".as_hash" do
+      it "returns hash of response body" do
+        expect(@response.as_hash.class).to be(Hash)
+      end
+    end
+
     describe ".error" do
       it "returns message" do
         expect(@response.error).to eq("No error")
