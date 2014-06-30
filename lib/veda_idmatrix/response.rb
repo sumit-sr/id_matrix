@@ -3,7 +3,6 @@ class VedaIdmatrix::Response < ActiveRecord::Base
   self.primary_key = :id
   belongs_to :request, dependent: :destroy, inverse_of: :response
 
-  # validates :request, presence: true
   # validates :xml, presence: true
   # validates :code, presence: true
   # validates :headers, presence: true
@@ -16,7 +15,7 @@ class VedaIdmatrix::Response < ActiveRecord::Base
 
   def to_struct
     if self.xml && self.success?
-      self.struct = RecursiveOpenStruct.new(self.to_hash) #["Envelope"]
+      self.struct = RecursiveOpenStruct.new(self.to_hash)
     else
       "No struct was created, see .error"
     end

@@ -6,10 +6,6 @@ module VedaIdmatrix
       source_root File.expand_path("../../templates", __FILE__)
       desc "Sets up the Veda Idmatrix Configuration File"
 
-      def copy_config
-        template "veda_idmatrix_config.yml", "config/veda_idmatrix.yml"
-      end
-
       def self.next_migration_number(dirname)
         Time.new.utc.strftime("%Y%m%d%H%M%S")
       end

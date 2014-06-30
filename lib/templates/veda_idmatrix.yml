@@ -1,7 +1,0 @@
-# Note for gem developer/contributer
-# Copy this file to lib/config and fill in your veda id matrix access details there
-# The filename in the lib/config directory is included in the gitignore file
-# Do not change the file in the lib/templates directory
-url: 'https://ctaau.vedaxml.com/cta/sys2/idmatrix-v4'
-access_code: 
-password: 

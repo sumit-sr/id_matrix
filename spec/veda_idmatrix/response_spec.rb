@@ -91,13 +91,18 @@ describe VedaIdmatrix::Response do
       :device_intelligence_org_id => "org-abc",
       :device_intelligence_session_id => "X123"
     }
+
+    @enquiry_hash = {
+      :client_reference => "123456", 
+      :reason_for_enquiry => "Test"
+    }
   end
 
     
   describe "created by request.post with valid access details" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash) 
+      @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
       @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
@@ -174,7 +179,8 @@ describe VedaIdmatrix::Response do
           user_code: "xxxxx",
           password: "xxxxx",
           },
-        entity: @entity_hash)
+        entity: @entity_hash,
+        enquiry: @enquiry_hash)
       @post = @request.post   
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
@@ -245,7 +251,8 @@ describe VedaIdmatrix::Response do
           access_code: @config["access_code"],
           password: "xxxxx",
           },
-        entity: @entity_hash)
+        entity: @entity_hash,
+        enquiry: @enquiry_hash)
       @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
