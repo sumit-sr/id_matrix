@@ -56,18 +56,22 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     date_of_birth = (self.entity[:date_of_birth]) #.strftime("%Y-%m-%d")
     gender = (self.entity[:gender].downcase)
 
-    current_address = {
-      :'property' => (self.entity[:current_address][:property]),
-      :'unit-number' => (self.entity[:current_address][:unit_number]),
-      :'street-number' => (self.entity[:current_address][:street_number]),
-      :'street-name' => (self.entity[:current_address][:street_name]),
-      :'street-type' => (self.entity[:current_address][:street_type]),
-      :'suburb' => (self.entity[:current_address][:suburb]),
-      :'state' => (self.entity[:current_address][:state]),
-      :'postcode' => (self.entity[:current_address][:postcode]),
-    }
-    current_address.delete(:'unit-number') if self.entity[:current_address][:unit_number].blank? #rescue true
-
+    if self.entity[:current_address][:unformatted_address]
+       current_address = {:'unformatted-address' => self.entity[:current_address][:unformatted_address]}
+    else  
+      current_address = {
+        :'property' => (self.entity[:current_address][:property]),
+        :'unit-number' => (self.entity[:current_address][:unit_number]),
+        :'street-number' => (self.entity[:current_address][:street_number]),
+        :'street-name' => (self.entity[:current_address][:street_name]),
+        :'street-type' => (self.entity[:current_address][:street_type]),
+        :'suburb' => (self.entity[:current_address][:suburb]),
+        :'state' => (self.entity[:current_address][:state]),
+        :'postcode' => (self.entity[:current_address][:postcode]),
+      }
+      current_address.delete(:'unit-number') if self.entity[:current_address][:unit_number].blank? #rescue true
+    end
+      
     phone = {
       :'numbers' => {
         :'home-phone-number verify="true"' => (self.entity[:home_phone_number]),
