@@ -3,6 +3,7 @@ require 'spec_helper'
 
 describe VedaIdmatrix::Request do
   it { should have_one(:response).dependent(:destroy) }
+  it { should validate_presence_of(:ref_id) }
   it { should validate_presence_of(:access) }
   it { should validate_presence_of(:entity) }
   it { should validate_presence_of(:enquiry) }
@@ -97,7 +98,7 @@ describe VedaIdmatrix::Request do
       :reason_for_enquiry => "Test"
     }
 
-    @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
+    @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
   end
 
   describe "with valid access credentials" do

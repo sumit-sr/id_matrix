@@ -5,6 +5,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   serialize :entity
   serialize :enquiry
   
+  validates :ref_id, presence: true
   validates :access, presence: true
   validates :entity, presence: true
   validates :enquiry, presence: true

@@ -4,13 +4,10 @@ class VedaIdmatrix::Response < ActiveRecord::Base
 
   serialize :headers
   serialize :struct
-  serialize :as_hash
-
-  after_initialize :to_hash
 
   def to_hash
     if self.xml
-      self.as_hash = Hash.from_xml(self.xml)
+      Hash.from_xml(self.xml)
     else
       "No hash was created because there was no xml"
     end

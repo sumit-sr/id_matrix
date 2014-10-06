@@ -97,7 +97,7 @@ describe VedaIdmatrix::Response do
   describe "created by request.post with valid access details" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
+      @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
       @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
@@ -138,9 +138,9 @@ describe VedaIdmatrix::Response do
       end  
     end
 
-    describe ".as_hash" do
+    describe ".to_hash" do
       it "returns hash of response body" do
-        expect(@response.as_hash.class).to be(Hash)
+        expect(@response.to_hash.class).to be(Hash)
       end
     end
 

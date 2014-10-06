@@ -102,7 +102,7 @@ require_relative 'spec/schema'
         :reason_for_enquiry => "Test"
       }  
 
-@req = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
+@req = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
 @post = @req.post
 @res = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.header, code: @post.code, success: @post.success?, request_id: @req.id)
 
