@@ -26,7 +26,7 @@ Then run migrations:
 ### Request
 
 	
-    request = VedaIdmatrix::Request.create(access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
+    request = VedaIdmatrix::Request.create(ref_id: 123, access: access_hash, entity: entity_hash, enquiry: enquiry_hash)
 
 Attributes for access_hash:
 
