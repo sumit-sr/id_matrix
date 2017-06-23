@@ -4,16 +4,16 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   serialize :access
   serialize :entity
   serialize :enquiry
-  
+
   validates :ref_id, presence: true
   validates :access, presence: true
   validates :entity, presence: true
   validates :enquiry, presence: true
   after_initialize :to_soap
 
-  
+
   def schema
-    fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-2.xsd', File.dirname(__FILE__) )
+    fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-12.xsd', File.dirname(__FILE__) )
     File.read(fname)
   end
 
@@ -47,7 +47,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def id_matrix_operation
-  
+
     individual_name = {
       :'family-name' => (self.entity[:family_name]).to_s,
       :'first-given-name' => (self.entity[:first_given_name]).to_s,
@@ -59,7 +59,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     if self.entity[:current_address][:unformatted_address]
        current_address = {:'unformatted-address' => self.entity[:current_address][:unformatted_address]}
-    else  
+    else
       current_address = {
         :'property' => (self.entity[:current_address][:property]),
         :'unit-number' => (self.entity[:current_address][:unit_number]),
@@ -72,7 +72,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       }
       current_address.delete(:'unit-number') if self.entity[:current_address][:unit_number].blank? #rescue true
     end
-      
+
     phone = {
       :'numbers' => {
         :'home-phone-number verify="true"' => (self.entity[:home_phone_number]),
@@ -85,7 +85,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'state-code' => (self.entity[:drivers_licence_state_code]),
       :'number' => (self.entity[:drivers_licence_number])
     }
-    
+
     return {
         :'individual-name' => individual_name,
         :'date-of-birth' => date_of_birth,
@@ -143,6 +143,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     end
   end
 
-  
+
 
 end
