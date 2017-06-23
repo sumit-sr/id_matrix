@@ -9,8 +9,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   validates :access, presence: true
   validates :entity, presence: true
   validates :enquiry, presence: true
-  after_initialize :to_soap
-
 
   def schema
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-12.xsd', File.dirname(__FILE__) )
@@ -33,20 +31,31 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
   def to_dom(node, data, attrs={} )
     doc = Nokogiri::XML::Builder.new do |builder|
+      if data.is_a?(Hash) && data.keys.sort == [:attributes, :value]
+        attrs.merge!(data[:attributes])
+        data = data[:value]
+      end
+
       if data.is_a? Hash
         builder.send(node, attrs) do
           data.keys.each do |k|
-            builder  << to_dom(k, data[k]).root.to_xml
+            builder << to_dom(k, data[k]).root.to_xml
           end
         end
       else
-        builder.send(node, data)
+        builder.send(node, data, attrs)
       end
     end
     doc.doc
   end
 
   def id_matrix_operation
+    consents = {
+      :consent => {
+        :attributes =>{ :status => "1"},
+        :value => "VEDA-CBCONS"
+      }
+    }
 
     individual_name = {
       :'family-name' => (self.entity[:family_name]).to_s,
@@ -81,19 +90,21 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     }
 
     email_address = (self.entity[:email_address])
+
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
       :'number' => (self.entity[:drivers_licence_number])
     }
 
     return {
-        :'individual-name' => individual_name,
-        :'date-of-birth' => date_of_birth,
-        :'gender' => gender,
-        :'current-address' => current_address,
-        :'phone' => phone,
-        :'email-address' => email_address,
-        :'drivers-licence-details' => drivers_licence_details
+      :'consents' => consents,
+      :'individual-name' => individual_name,
+      :'date-of-birth' => date_of_birth,
+      :'gender' => gender,
+      :'current-address' => current_address,
+      :'phone' => phone,
+      :'email-address' => email_address,
+      :'drivers-licence-details' => drivers_licence_details
     }
   end
 
@@ -135,6 +146,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def post
+    self.to_soap
     if self.soap
       headers = {'Content-Type' => 'text/xml', 'Accept' => 'text/xml'}
       HTTParty.post(self.access[:url], :body => self.soap, :headers => headers)
@@ -142,7 +154,5 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       "No soap envelope to post! - run to_soap"
     end
   end
-
-
 
 end

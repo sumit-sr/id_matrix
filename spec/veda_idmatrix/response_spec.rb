@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe VedaIdmatrix::Response do
   it { should belong_to(:request).dependent(:destroy) }
-  
+
   before(:all) do
     @config = YAML.load_file('dev_config.yml')
-    @access_hash = 
+    @access_hash =
       {
         :url => @config["url"],
         :access_code => @config["access_code"],
@@ -88,21 +88,22 @@ describe VedaIdmatrix::Response do
     }
 
     @enquiry_hash = {
-      :client_reference => "123456", 
+      :client_reference => "123456",
       :reason_for_enquiry => "Test"
     }
   end
 
-    
   describe "created by request.post with valid access details" do
 
     before(:all) do
-      @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
+      @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
       @post = @request.post
+      p @request.soap
+      p @post.body
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
 
-    describe "is valid" do
+    describe "is valid", :focus do
       it "returns true" do
         expect(@response.valid?).to be(true)
       end
@@ -111,31 +112,31 @@ describe VedaIdmatrix::Response do
     describe ".code" do
       it "returns status code" do
         expect(@response.code).to be(200)
-      end  
+      end
     end
 
     describe ".headers" do
       it "returns headers" do
         expect(@response.headers).to include("content-type")
-      end  
+      end
     end
 
     describe ".success?" do
       it "returns boolean of post action" do
         expect(@response.success?).to be(true)
-      end  
+      end
     end
 
     describe ".request_id" do
       it "returns request_id" do
         expect(@response.request_id).to eq(@request.id)
-      end  
+      end
     end
 
     describe ".xml" do
       it "returns xml response body" do
         expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
-      end  
+      end
     end
 
     describe ".to_hash" do
@@ -149,26 +150,25 @@ describe VedaIdmatrix::Response do
         expect(@response.error).to eq("No error")
       end
     end
-  
   end
 
   describe "created by request.post with invalid access details" do
 
     before(:all) do
       @request = VedaIdmatrix::Request.new(
-        access: { 
-          url: @config["url"], 
+        access: {
+          url: @config["url"],
           user_code: "xxxxx",
           password: "xxxxx",
           },
         entity: @entity_hash,
         enquiry: @enquiry_hash)
-      @post = @request.post   
+      @post = @request.post
       @response = VedaIdmatrix::Response.create(xml: @post.body, headers: @post.headers, code: @post.code, success: @post.success?, request_id: @request.id)
     end
 
     describe "is valid" do
-      
+
       it "returns true" do
         expect(@response.valid?).to be(true)
       end
@@ -187,39 +187,40 @@ describe VedaIdmatrix::Response do
     describe ".headers" do
       it "returns headers" do
         expect(@response.headers).to include("content-type")
-      end  
+      end
     end
 
     describe ".success?" do
       it "returns boolean of post action" do
         expect(@response.success?).to be(false)
-      end  
+      end
     end
 
     describe ".request_id" do
       it "returns request_id" do
         expect(@response.request_id).to eq(@request.id)
-      end  
+      end
     end
 
     describe ".xml" do
       it "returns xml response body" do
         expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
-      end  
+      end
     end
 
     describe ".error" do
       it "returns message" do
         expect(@response.error).to include("Authentication Required")
       end
-    end      
+    end
   end
+
   describe "created by request.post with incorrect password" do
 
     before(:all) do
       @request = VedaIdmatrix::Request.new(
-        access: { 
-          url: @config["url"], 
+        access: {
+          url: @config["url"],
           access_code: @config["access_code"],
           password: "xxxxx",
           },
@@ -242,32 +243,32 @@ describe VedaIdmatrix::Response do
     describe ".headers" do
       it "returns headers" do
         expect(@response.headers).to include("content-type")
-      end  
+      end
     end
 
     describe ".success?" do
       it "returns boolean of post action" do
         expect(@response.success?).to be(false)
-      end  
+      end
     end
 
-    
+
     describe ".success" do
       it "returns boolean of post action" do
         expect(@response.success).to be(false)
-      end  
+      end
     end
 
     describe ".request_id" do
       it "returns request_id" do
         expect(@response.request_id).to eq(@request.id)
-      end  
+      end
     end
 
     describe ".xml" do
       it "returns xml response body" do
         expect(@response.xml).to include('<?xml version="1.0" encoding="UTF-8"?>')
-      end  
+      end
     end
 
    describe ".error" do
@@ -275,7 +276,5 @@ describe VedaIdmatrix::Response do
         expect(@response.error).to include("Authentication Failed")
       end
     end
-
-      
   end
 end
