@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- edited with XMLSpy v2010 rel. 2 (http://www.altova.com) by Attention: Nicholas Fletcher (Veda Advantage Ltd) -->
+<!-- edited with XMLSpy v2014 sp1 (x64) (http://www.altova.com) by Asad Nasir (Veda) -->
+<!-- idmatrix-v4-0-12.xsd -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:idm="http://vedaxml.com/vxml2/idmatrix-v4-0.xsd" targetNamespace="http://vedaxml.com/vxml2/idmatrix-v4-0.xsd" elementFormDefault="qualified" attributeFormDefault="unqualified">
 	<xs:simpleType name="family-nameType">
 		<xs:annotation>
 			<xs:documentation>simpleType for the elements of an individuals
-				family name
-			</xs:documentation>
+                family name
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="0"/>
@@ -15,8 +16,8 @@
 	<xs:simpleType name="first-given-nameType">
 		<xs:annotation>
 			<xs:documentation>simpleType for the elements of an individuals first
-				given name
-			</xs:documentation>
+                given name
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="0"/>
@@ -26,8 +27,8 @@
 	<xs:simpleType name="other-given-nameType">
 		<xs:annotation>
 			<xs:documentation>simpleType for the elements of an individuals other
-				given name(s)
-			</xs:documentation>
+                given name(s)
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="0"/>
@@ -37,7 +38,7 @@
 	<xs:simpleType name="genderType">
 		<xs:annotation>
 			<xs:documentation>Enumerated simpleType for an individuals gender
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="unknown"/>
@@ -49,7 +50,7 @@
 	<xs:simpleType name="phone-numberType">
 		<xs:annotation>
 			<xs:documentation>simpleType for 10 digit Australian phone numbers
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:whiteSpace value="collapse"/>
@@ -59,7 +60,7 @@
 	<xs:simpleType name="countryCodeEnumType">
 		<xs:annotation>
 			<xs:documentation>Enumeration of ISO 3166-1 alpha-3 country codes
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="ABW">
@@ -84,7 +85,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="ALA">
 				<xs:annotation>
-					<xs:documentation>Åland Islands</xs:documentation>
+					<xs:documentation>Ã…land Islands</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ALB">
@@ -199,7 +200,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="BLM">
 				<xs:annotation>
-					<xs:documentation>Saint Barthélemy</xs:documentation>
+					<xs:documentation>Saint BarthÃ©lemy</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="BLR">
@@ -220,7 +221,7 @@
 			<xs:enumeration value="BOL">
 				<xs:annotation>
 					<xs:documentation>Bolivia, Plurinational State of
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="BRA">
@@ -285,7 +286,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="CIV">
 				<xs:annotation>
-					<xs:documentation>Côte d'Ivoire</xs:documentation>
+					<xs:documentation>CÃ´te d'Ivoire</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="CMR">
@@ -296,7 +297,7 @@
 			<xs:enumeration value="COD">
 				<xs:annotation>
 					<xs:documentation>Congo, the Democratic Republic of the
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="COG">
@@ -447,7 +448,7 @@
 			<xs:enumeration value="FSM">
 				<xs:annotation>
 					<xs:documentation>Micronesia, Federated States of
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="GAB">
@@ -548,7 +549,7 @@
 			<xs:enumeration value="HMD">
 				<xs:annotation>
 					<xs:documentation>Heard Island and McDonald Islands
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="HND">
@@ -684,7 +685,7 @@
 			<xs:enumeration value="LAO">
 				<xs:annotation>
 					<xs:documentation>Lao People's Democratic Republic
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="LBN">
@@ -785,7 +786,7 @@
 			<xs:enumeration value="MKD">
 				<xs:annotation>
 					<xs:documentation>Macedonia, the former Yugoslav Republic of
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="MLI">
@@ -971,7 +972,7 @@
 			<xs:enumeration value="PRK">
 				<xs:annotation>
 					<xs:documentation>Korea, Democratic People's Republic of
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PRT">
@@ -987,7 +988,7 @@
 			<xs:enumeration value="PSE">
 				<xs:annotation>
 					<xs:documentation>Palestinian Territory, Occupied
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PYF">
@@ -1002,7 +1003,7 @@
 			</xs:enumeration>
 			<xs:enumeration value="REU">
 				<xs:annotation>
-					<xs:documentation>Réunion</xs:documentation>
+					<xs:documentation>RÃ©union</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ROU">
@@ -1043,7 +1044,7 @@
 			<xs:enumeration value="SGS">
 				<xs:annotation>
 					<xs:documentation>South Georgia and the South Sandwich Islands
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SHN">
@@ -1091,6 +1092,11 @@
 					<xs:documentation>Serbia</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
+			<xs:enumeration value="SSD">
+				<xs:annotation>
+					<xs:documentation>South Sudan</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
 			<xs:enumeration value="STP">
 				<xs:annotation>
 					<xs:documentation>Sao Tome and Principe</xs:documentation>
@@ -1119,6 +1125,11 @@
 			<xs:enumeration value="SWZ">
 				<xs:annotation>
 					<xs:documentation>Swaziland</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="SXM">
+				<xs:annotation>
+					<xs:documentation>Sint Maarten (Dutch part)</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SYC">
@@ -1219,7 +1230,7 @@
 			<xs:enumeration value="UMI">
 				<xs:annotation>
 					<xs:documentation>United States Minor Outlying Islands
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="URY">
@@ -1245,13 +1256,13 @@
 			<xs:enumeration value="VCT">
 				<xs:annotation>
 					<xs:documentation>Saint Vincent and the Grenadines
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="VEN">
 				<xs:annotation>
 					<xs:documentation>Venezuela, Bolivarian Republic of
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="VGB">
@@ -1307,6 +1318,65 @@
 			<xs:enumeration value=""/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="IDMDate">
+		<xs:union memberTypes="xs:date xs:gYearMonth xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="IDMPartialDate">
+		<xs:union memberTypes="xs:gYearMonth xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="IDMFullDateOrYear">
+		<xs:union memberTypes="xs:date xs:gYear"/>
+	</xs:simpleType>
+	<xs:simpleType name="consentCodes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="AEC-ER"/>
+			<xs:enumeration value="MIRUS-HER"/>
+			<xs:enumeration value="CITIZEN-DOC"/>
+			<xs:enumeration value="VEDA-CBCOMM"/>
+			<xs:enumeration value="VEDA-CBCONS"/>
+			<xs:enumeration value="VEDA-CBPR"/>
+			<xs:enumeration value="DL"/>
+			<xs:enumeration value="ACC-PEPS"/>
+			<xs:enumeration value="ACC-COMPLINK"/>
+			<xs:enumeration value="IMMICARD-DOC"/>
+			<xs:enumeration value="VEDA-IRS"/>
+			<xs:enumeration value="MEDICARE-CARD"/>
+			<xs:enumeration value="VEDA-NTD"/>
+			<xs:enumeration value="DFAT-AP"/>
+			<xs:enumeration value="DIAC-VEVO"/>
+			<xs:enumeration value="DIAC-RBD"/>
+			<xs:enumeration value="POAC"/>
+			<xs:enumeration value="MIRUS-SPD"/>
+			<xs:enumeration value="VEDA-PND"/>
+			<xs:enumeration value="VEDA-EVVELOCITY"/>
+			<xs:enumeration value="VEDA-SFD"/>
+			<xs:enumeration value="IMG-DOC"/>
+			<xs:enumeration value="SFA"/>
+			<xs:enumeration value="PNV"/>
+			<xs:enumeration value="DVI"/>
+			<xs:enumeration value="KBA"/>
+			<xs:enumeration value="BDMBC"/>
+			<xs:enumeration value="BDMMC"/>
+			<xs:enumeration value="BDMCON"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="consent">
+		<xs:simpleContent>
+			<xs:extension base="idm:consentCodes">
+				<xs:attribute name="status" type="xs:boolean"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="IDMConsents">
+		<xs:sequence>
+			<xs:element name="consent" type="idm:consent" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="global-screening-details">
+		<xs:sequence>
+			<xs:element name="associated-country" type="idm:countryCodeEnumType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
 	<xs:simpleType name="AustralianStateType">
 		<xs:annotation>
 			<xs:documentation>Enumeration of Australian states</xs:documentation>
@@ -1370,27 +1440,33 @@
 			<xs:enumeration value=""/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="restricted-param">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="0"/>
+			<xs:maxLength value="255"/>								
+		</xs:restriction>					
+	</xs:simpleType>		
 	<xs:attributeGroup name="countryCodes">
 		<xs:annotation>
 			<xs:documentation>Optional ISO 3166-1 alpha-3 code attribute for
-				countries
-			</xs:documentation>
+                countries
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="country-code" type="idm:countryCodeEnumType" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="countryCodesRequired">
 		<xs:annotation>
 			<xs:documentation>Required ISO 3166-1 alpha-3 code attribute for
-				countries
-			</xs:documentation>
+                countries
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="country-code" type="idm:countryCodeEnumType" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="id-attributes">
 		<xs:annotation>
 			<xs:documentation>Attributes to uniquely identify and reference
-				elements
-			</xs:documentation>
+                elements
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="id" type="xs:ID" use="optional"/>
 		<xs:attribute name="idref" type="xs:IDREF" use="optional"/>
@@ -1398,12 +1474,12 @@
 	<xs:attributeGroup name="match-attributes">
 		<xs:annotation>
 			<xs:documentation>Attributes for match meta-data
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="search-value" type="xs:token" use="optional">
 			<xs:annotation>
 				<xs:documentation>The original value that was searched for
-				</xs:documentation>
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="match-score" type="xs:token" use="optional">
@@ -1414,27 +1490,27 @@
 		<xs:attribute name="match-indicator" type="xs:token" use="optional">
 			<xs:annotation>
 				<xs:documentation>Indication of the type or strength of match
-				</xs:documentation>
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="record-identifier" type="xs:token" use="optional">
 			<xs:annotation>
 				<xs:documentation>Unique identifier of the matching record
-				</xs:documentation>
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="match-score-weight" type="xs:token" use="optional">
 			<xs:annotation>
 				<xs:documentation>Weighting factor applied to this match-score when
-					calculating the overall verification-score
-				</xs:documentation>
+                    calculating the overall verification-score
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="profile-attributes">
 		<xs:annotation>
 			<xs:documentation>Attributes for selecting and reporting on a service profile
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="profile-name" type="xs:token" use="required"/>
 		<xs:attribute name="profile-version" type="xs:token" use="optional"/>
@@ -1442,7 +1518,7 @@
 	<xs:attributeGroup name="service-result-attributes">
 		<xs:annotation>
 			<xs:documentation>Attributes for infomation returned by a service
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="service-result-code" type="xs:token" use="required"/>
 		<xs:attribute name="service-result-string" type="xs:string" use="required"/>
@@ -1451,7 +1527,7 @@
 	<xs:complexType name="stateType">
 		<xs:annotation>
 			<xs:documentation>Enumerated complexType for Australian states
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="idm:AustralianStateType"/>
@@ -1460,17 +1536,25 @@
 	<xs:complexType name="countryType">
 		<xs:annotation>
 			<xs:documentation>Enumerated complexType for ISO 3166-1 alpha-3
-				country codes
-			</xs:documentation>
+                country codes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="idm:countryCodeEnumType"/>
 		</xs:simpleContent>
 	</xs:complexType>
+	<xs:complexType name="countryTypeExtension">
+		<xs:complexContent>
+			<xs:extension base="idm:countryType">
+				<xs:attributeGroup ref="idm:match-attributes"/>
+				<xs:attributeGroup ref="idm:id-attributes"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:complexType name="addressType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for address details
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="property" type="xs:token" minOccurs="0">
@@ -1496,7 +1580,7 @@
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
 						<xs:minLength value="0"/>
-						<xs:maxLength value="8"/>
+						<xs:maxLength value="16"/>
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -1533,19 +1617,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="state" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>State</xs:documentation>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:simpleContent>
-						<xs:restriction base="idm:stateType">
-							<xs:minLength value="0"/>
-							<xs:maxLength value="3"/>
-						</xs:restriction>
-					</xs:simpleContent>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="state" type="idm:stateType" minOccurs="0"/>
 			<xs:element name="postcode" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Postcode</xs:documentation>
@@ -1559,7 +1631,7 @@
 			<xs:element name="DPID" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australia Post Delivery Point Identifier
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
@@ -1576,7 +1648,7 @@
 			<xs:element name="unformatted-address" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unformatted address information
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
@@ -1588,8 +1660,8 @@
 		<xs:attribute name="date-current-from" type="xs:gYearMonth" use="optional">
 			<xs:annotation>
 				<xs:documentation>Date (year/month) this address became the
-					individuals current address
-				</xs:documentation>
+                    individuals current address
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="type" type="xs:token" use="optional"/>
@@ -1597,7 +1669,7 @@
 	<xs:complexType name="addressType-no-restrictions">
 		<xs:annotation>
 			<xs:documentation>ComplexType for address details
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="property" minOccurs="0">
@@ -1699,7 +1771,7 @@
 			<xs:element name="DPID" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australia Post Delivery Point Identifier
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1724,7 +1796,7 @@
 			<xs:element name="unformatted-address" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unformatted address information
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1738,8 +1810,8 @@
 		<xs:attribute name="date-current-from" type="xs:gYearMonth" use="optional">
 			<xs:annotation>
 				<xs:documentation>Date (year/month) this address became the
-					individuals current address
-				</xs:documentation>
+                    individuals current address
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="type" type="xs:token" use="optional"/>
@@ -1747,8 +1819,8 @@
 	<xs:complexType name="addressType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for address details plus match
-				attributes
-			</xs:documentation>
+                attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="property" minOccurs="0">
@@ -1858,7 +1930,7 @@
 			<xs:element name="DPID" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australia Post Delivery Point Identifier
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1869,23 +1941,11 @@
 					</xs:simpleContent>
 				</xs:complexType>
 			</xs:element>
-			<xs:element name="country" minOccurs="0">
-				<xs:annotation>
-					<xs:documentation>Country</xs:documentation>
-				</xs:annotation>
-				<xs:complexType>
-					<xs:complexContent>
-						<xs:extension base="idm:countryType">
-							<xs:attributeGroup ref="idm:match-attributes"/>
-							<xs:attributeGroup ref="idm:id-attributes"/>
-						</xs:extension>
-					</xs:complexContent>
-				</xs:complexType>
-			</xs:element>
+			<xs:element name="country" type="idm:countryTypeExtension" minOccurs="0"/>
 			<xs:element name="unformatted-address" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Unformatted address information
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1903,46 +1963,52 @@
 	<xs:complexType name="birth-certificate-detailsType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for birth certificate
-				details
-			</xs:documentation>
+                details
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="registration-number" type="xs:normalizedString">
+			<xs:element name="registration-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the birth certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="registration-state" type="idm:AustralianStateType">
 				<xs:annotation>
 					<xs:documentation>Australian state the birth was registered in.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="registration-date" type="xs:date">
+			<xs:element name="registration-date" type="idm:IDMFullDateOrYear" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The date the birth was registered.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="registered-name" type="idm:individual-nameType">
 				<xs:annotation>
 					<xs:documentation>The name registered on the birth certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="date-of-print" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registration-district" type="xs:normalizedString" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>District the document was registered in.
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -1950,15 +2016,15 @@
 	<xs:complexType name="birth-certificate-detailsType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for birth certificate
-				details plus match
-				attributes
-			</xs:documentation>
+                details plus match
+                attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="registration-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the birth certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1972,7 +2038,7 @@
 			<xs:element name="registration-state" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australian state the birth was registered in.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -1986,7 +2052,7 @@
 			<xs:element name="registration-date" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The date the birth was registered.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2000,14 +2066,14 @@
 			<xs:element name="registered-name" type="idm:individual-nameType-match-attributes" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name registered on the birth certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2021,8 +2087,8 @@
 			<xs:element name="date-of-print" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2040,49 +2106,48 @@
 	<xs:complexType name="change-of-name-certificate-detailsType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for change of name certificate
-				details
-			</xs:documentation>
+                details
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="registration-number" type="xs:normalizedString">
+			<xs:element name="registration-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the change of name
-						certificate
-					</xs:documentation>
+                        certificate
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="registration-state" type="idm:AustralianStateType">
 				<xs:annotation>
 					<xs:documentation>Australian state the change of name was
-						registered in.
-					</xs:documentation>
-				</xs:annotation>
-			</xs:element>
-			<xs:element name="date-of-event" type="xs:date">
-				<xs:annotation>
-					<xs:documentation>The date the change of name was registered
-					</xs:documentation>
+                        registered in.
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="registered-name" type="idm:individual-nameType">
 				<xs:annotation>
 					<xs:documentation>The new name registered on the change of name
-						certificate
-					</xs:documentation>
+                        certificate
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="date-of-print" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-registration" type="idm:IDMFullDateOrYear" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date on which the change of name was registered.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2090,16 +2155,16 @@
 	<xs:complexType name="change-of-name-certificate-detailsType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for change of namecertificate
-				details
-				plus match attributes
-			</xs:documentation>
+                details
+                plus match attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="registration-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the change of name
-						certificate
-					</xs:documentation>
+                        certificate
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2113,8 +2178,8 @@
 			<xs:element name="registration-state" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australian state the chnage of name was
-						registered in.
-					</xs:documentation>
+                        registered in.
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2128,7 +2193,7 @@
 			<xs:element name="date-of-event" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The date the change of name was registered
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2142,15 +2207,15 @@
 			<xs:element name="registered-name" type="idm:individual-nameType-match-attributes" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name registered on the change of name
-						certificate
-					</xs:documentation>
+                        certificate
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						documents from SA, NT and ACT
-					</xs:documentation>
+                        documents from SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2164,8 +2229,21 @@
 			<xs:element name="date-of-print" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						documents from SA, NT and ACT
-					</xs:documentation>
+                        documents from SA, NT and ACT
+                    </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+							<xs:attributeGroup ref="idm:id-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date-of-registration" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date on which the change of name was registered.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2183,15 +2261,15 @@
 	<xs:complexType name="device-intelligence-detailsType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for device intelligence assessment
-				details
-			</xs:documentation>
+                details
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="org-id">
 				<xs:annotation>
 					<xs:documentation>Unique id held by ThreatMetrix for your
-						organization.
-					</xs:documentation>
+                        organization.
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
@@ -2202,25 +2280,44 @@
 			<xs:element name="session-id">
 				<xs:annotation>
 					<xs:documentation>The web server session identifier generated when
-						device profiling was initiated.
-					</xs:documentation>
+                        device profiling was initiated.
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
 						<xs:maxLength value="128"/>
 					</xs:restriction>
 				</xs:simpleType>
-			</xs:element>
+			</xs:element>			
+			<xs:element name="params" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Message element that contains a set of parameters
+		            </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="param" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="idm:restricted-param">
+										<xs:attribute name="key" type="xs:token" use="required"/>  
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>									
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>			
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="individual-nameType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for the elements of an individuals full
-				name
-			</xs:documentation>
+                name
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="family-name">
+			<xs:element name="family-name" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Family name</xs:documentation>
 				</xs:annotation>
@@ -2230,7 +2327,7 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
-			<xs:element name="first-given-name">
+			<xs:element name="first-given-name" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>First name</xs:documentation>
 				</xs:annotation>
@@ -2255,11 +2352,11 @@
 	<xs:complexType name="individual-nameType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for the elements of an individuals full
-				name plus match attributes
-			</xs:documentation>
+                name plus match attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="family-name">
+			<xs:element name="family-name" minOccurs="0">
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="idm:family-nameType">
@@ -2302,29 +2399,29 @@
 	<xs:complexType name="marriage-certificate-detailsType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for marriage certificate
-				details
-			</xs:documentation>
+                details
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="registration-number" type="xs:normalizedString">
+			<xs:element name="registration-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="registration-state" type="idm:AustralianStateType">
 				<xs:annotation>
 					<xs:documentation>Australian state the marriage was registered in.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="registration-year" type="xs:gYear">
+			<xs:element name="registration-year" type="xs:gYear" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Year the marriage was registered
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
-			<xs:element name="marriage-date" type="xs:date">
+			<xs:element name="marriage-date" type="idm:IDMFullDateOrYear">
 				<xs:annotation>
 					<xs:documentation>The date of the marriage.</xs:documentation>
 				</xs:annotation>
@@ -2332,27 +2429,38 @@
 			<xs:element name="brides-name" type="idm:individual-nameType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name of the bride on the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="grooms-name" type="idm:individual-nameType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name of the groom on the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" type="xs:normalizedString" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="date-of-print" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						marriages in SA, NT and ACT
-					</xs:documentation>
+                        marriages in SA, NT and ACT
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-registration" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date on which the marriage was registered.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registration-district" type="xs:normalizedString" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>District the document was registered in.
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -2360,15 +2468,15 @@
 	<xs:complexType name="marriage-certificate-detailsType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for marriage certificate
-				details plus
-				match attributes
-			</xs:documentation>
+                details plus
+                match attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="registration-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Registration number of the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2382,7 +2490,7 @@
 			<xs:element name="registration-state" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australian state the marriage was registered in.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2396,7 +2504,7 @@
 			<xs:element name="registration-year" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Year the marriage was registered
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2423,20 +2531,20 @@
 			<xs:element name="brides-name" type="idm:individual-nameType-match-attributes" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name of the bride on the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="grooms-name" type="idm:individual-nameType-match-attributes" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The name of the groom on the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="certificate-number" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The number of the document, required to verify
-						births in SA, NT and ACT
-					</xs:documentation>
+                        births in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2450,14 +2558,269 @@
 			<xs:element name="date-of-print" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Date the document was printed, required to verify
-						marriages in SA, NT and ACT
-					</xs:documentation>
+                        marriages in SA, NT and ACT
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:string">
 							<xs:attributeGroup ref="idm:match-attributes"/>
 							<xs:attributeGroup ref="idm:id-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date-of-registration" nillable="true" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date on which the marriage was registered.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+							<xs:attributeGroup ref="idm:id-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="idm:match-attributes"/>
+		<xs:attributeGroup ref="idm:id-attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="immigration-card-numberType">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="9"/>
+			<xs:pattern value="[A-Za-z0-9]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="immigration-detailsType">
+		<xs:annotation>
+			<xs:documentation>ComplexType for immigration card details
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="card-number" type="idm:immigration-card-numberType" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Immigration card number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-birth-on-card" type="idm:IDMPartialDate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of birth on card</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name on document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="immigration-detailsType-match-attributes">
+		<xs:annotation>
+			<xs:documentation>ComplexType for immigration card details plus match
+                attributes
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="card-number" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Number on the immigration card</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="idm:match-attributes"/>
+		<xs:attributeGroup ref="idm:id-attributes"/>
+	</xs:complexType>
+	<xs:simpleType name="citizenship-stock-numberType">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="4"/>
+			<xs:maxLength value="11"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="citizenship-detailsType">
+		<xs:annotation>
+			<xs:documentation>ComplexType for citizenship certificate details
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="stock-number" type="idm:citizenship-stock-numberType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Stock number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-acquisition" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of citizenship</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-birth-on-certificate" type="idm:IDMPartialDate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of birth on certificate</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="primary-country-of-citizenship" type="idm:countryCodeEnumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Primary country of citizenship</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="other-country-of-citizenship" type="idm:countryCodeEnumType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Other country of citizenship</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name on document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="citizenship-detailsType-match-attributes">
+		<xs:annotation>
+			<xs:documentation>ComplexType for citizenship certificate details plus match
+                attributes
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="stock-number" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Stock number</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date-of-acquisition" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of citizenship</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="idm:match-attributes"/>
+		<xs:attributeGroup ref="idm:id-attributes"/>
+	</xs:complexType>
+	<!-- Registration by descent  -->
+	<xs:complexType name="registration-by-descent-detailsType">
+		<xs:annotation>
+			<xs:documentation>ComplexType for registration by descent certificate details
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="client-id" type="xs:token" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Client Id</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="register-no" type="xs:token" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Register Number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="entry-no" type="xs:token" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Entry number</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-acquisition" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>Date of registration by descent</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="date-of-birth-on-certificate" type="idm:IDMPartialDate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of birth on certificate</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name on document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="registration-by-descent-detailsType-match-attributes">
+		<xs:annotation>
+			<xs:documentation>ComplexType for registration by descent certificate details plus match
+                attributes
+            </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="client-id" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Client Id</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="register-no" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Register number</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="entry-no" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Entry number</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date-of-acquisition" minOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Date of registration by descent</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="date-of-birth-on-certificate" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date of registration by descent</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attributeGroup ref="idm:match-attributes"/>
 						</xs:extension>
 					</xs:simpleContent>
 				</xs:complexType>
@@ -2474,8 +2837,8 @@
 			<xs:element name="country-code" type="idm:countryCodeEnumType">
 				<xs:annotation>
 					<xs:documentation>ISO 3166-1 alpha-3 country code that issued the
-						passport
-					</xs:documentation>
+                        passport
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="number" type="xs:token">
@@ -2486,13 +2849,13 @@
 			<xs:element name="date-of-expiry" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of the passport
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="visa-date-of-expiry" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of Australian visa
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="mothers-maiden-family-name" type="idm:family-nameType" minOccurs="0">
@@ -2508,7 +2871,7 @@
 			<xs:element name="name-at-citizenship" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Previous name at naturalization
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -2562,8 +2925,8 @@
 				<xs:element name="country-of-birth" type="idm:countryCodeEnumType">
 					<xs:annotation>
 						<xs:documentation>Country that the place-of-birth was in. ISO
-							3166-1 alpha-3 code attribute for countries.
-						</xs:documentation>
+                            3166-1 alpha-3 code attribute for countries.
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
@@ -2574,8 +2937,8 @@
 				<xs:element name="machine-readable-zone-1">
 					<xs:annotation>
 						<xs:documentation>Contents of the first line of the machine
-							readable zone
-						</xs:documentation>
+                            readable zone
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:token">
@@ -2587,8 +2950,8 @@
 				<xs:element name="machine-readable-zone-2">
 					<xs:annotation>
 						<xs:documentation>Contents of the second line of the machine
-							readable zone
-						</xs:documentation>
+                            readable zone
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:simpleType>
 						<xs:restriction base="xs:token">
@@ -2598,20 +2961,25 @@
 					</xs:simpleType>
 				</xs:element>
 			</xs:sequence>
+			<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name on document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="passport-detailsType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for passport details plus match
-				attributes
-			</xs:documentation>
+                attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="country-code" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 3166-1 alpha-3 country code that issued the
-						passport
-					</xs:documentation>
+                        passport
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2638,7 +3006,7 @@
 			<xs:element name="date-of-expiry" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of the passport
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2652,7 +3020,7 @@
 			<xs:element name="visa-date-of-expiry" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of Australian visa
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2692,8 +3060,8 @@
 			<xs:element name="name-at-citizenship" type="idm:individual-nameType-match-attributes" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Previous name at naturalization if different to
-						current name
-					</xs:documentation>
+                        current name
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:sequence minOccurs="0">
@@ -2717,8 +3085,8 @@
 				<xs:element name="country-of-birth" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Country that the place-of-birth was in. ISO
-							3166-1 alpha-3 code attribute for countries.
-						</xs:documentation>
+                            3166-1 alpha-3 code attribute for countries.
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:simpleContent>
@@ -2737,8 +3105,8 @@
 				<xs:element name="machine-readable-zone-1" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Contents of the first line of the machine
-							readable zone
-						</xs:documentation>
+                            readable zone
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:simpleContent>
@@ -2752,8 +3120,8 @@
 				<xs:element name="machine-readable-zone-2" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Contents of the second line of the machine
-							readable zone
-						</xs:documentation>
+                            readable zone
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:simpleContent>
@@ -2769,10 +3137,49 @@
 		<xs:attributeGroup ref="idm:match-attributes"/>
 		<xs:attributeGroup ref="idm:id-attributes"/>
 	</xs:complexType>
+	<xs:simpleType name="medicare-date-of-expiryType">
+		<xs:union memberTypes="xs:date xs:gYearMonth"/>
+	</xs:simpleType>
+	<xs:simpleType name="medicare-card-colourType">
+		<xs:restriction base="xs:token">
+			<xs:minLength value="1"/>
+			<xs:maxLength value="1"/>
+			<xs:enumeration value="G"/>
+			<xs:enumeration value="B"/>
+			<xs:enumeration value="Y"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="name-on-documentType">
+		<xs:annotation>
+			<xs:documentation>An enumeration listing the possible values for name on document.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="BDMBC">
+				<xs:annotation>
+					<xs:documentation>Name on Birth Certificate.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BDMMC-BRIDE">
+				<xs:annotation>
+					<xs:documentation>Name of Bride on Marriage Certificate.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BDMMC-GROOM">
+				<xs:annotation>
+					<xs:documentation>Name of Groom on Marriage Certificate.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="BDMCON">
+				<xs:annotation>
+					<xs:documentation>Name on Change of Name Certificate.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="phone-detailsType">
 		<xs:annotation>
 			<xs:documentation>Elements of a telephone number
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="idm:phone-numberType">
@@ -2784,7 +3191,7 @@
 				<xs:attribute name="verify" type="xs:boolean" use="optional">
 					<xs:annotation>
 						<xs:documentation>Controls if this phone number should have a connection test performed on it.
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:attribute>
 			</xs:extension>
@@ -2793,8 +3200,8 @@
 	<xs:complexType name="phone-detailsType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>Elements of a telephone number plus match
-				attributes
-			</xs:documentation>
+                attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:simpleContent>
 			<xs:extension base="idm:phone-numberType">
@@ -2807,20 +3214,20 @@
 	<xs:complexType name="photoid-cardType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for photoid card details
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="country-code" type="idm:countryType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 3166-1 alpha-3 country code that issued the
-						photoid card
-					</xs:documentation>
+                        photoid card
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="state-code" type="idm:stateType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australian state that issued the photoid card
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="number">
@@ -2834,7 +3241,7 @@
 			<xs:element name="date-of-expiry" type="xs:date" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of the photoid card
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="card-number" type="xs:string" minOccurs="0">
@@ -2852,21 +3259,26 @@
 					<xs:documentation>The text for the captcha</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>name on document</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="photoid-cardType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for photoid card details
-				plus match
-				attributes
-			</xs:documentation>
+                plus match
+                attributes
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="country-code" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>ISO 3166-1 alpha-3 country code that issued the
-						photoid card
-					</xs:documentation>
+                        photoid card
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
@@ -2880,7 +3292,7 @@
 			<xs:element name="state-code" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Australian state that issued the photoid card
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
@@ -2907,7 +3319,7 @@
 			<xs:element name="date-of-expiry" nillable="true" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Expiration date of the photoid card
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:simpleContent>
@@ -2938,12 +3350,12 @@
 	<xs:complexType name="employmentType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for employment details,
-				used for
-				FraudCheck
-			</xs:documentation>
+                used for
+                FraudCheck
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="employer">
+			<xs:element name="employer" minOccurs="0">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
 						<xs:minLength value="0"/>
@@ -2959,18 +3371,26 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="ANZSIC-class-code" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:length value="4"/>
+						<xs:pattern value="[0-9]*"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 		</xs:sequence>
 		<xs:attributeGroup ref="idm:countryCodes"/>
 	</xs:complexType>
 	<xs:complexType name="employmentType-match-attributes">
 		<xs:annotation>
 			<xs:documentation>ComplexType for employment details,
-				used for
-				FraudCheck
-			</xs:documentation>
+                used for
+                FraudCheck
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="employer">
+			<xs:element name="employer" minOccurs="0">
 				<xs:complexType>
 					<xs:simpleContent>
 						<xs:extension base="xs:string">
@@ -2998,7 +3418,7 @@
 	<xs:simpleType name="indicator">
 		<xs:annotation>
 			<xs:documentation>Classification of the verification-score in to an outcome category. Usually one of: accept, undecided or reject
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:minLength value="0"/>
@@ -3008,7 +3428,7 @@
 	<xs:simpleType name="total-points">
 		<xs:annotation>
 			<xs:documentation>Total points for the verification
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal"/>
 	</xs:simpleType>
@@ -3024,31 +3444,31 @@
 	<xs:complexType name="errorType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for application error messages
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="faultcode" type="xs:token">
 				<xs:annotation>
 					<xs:documentation>Code identifying the error or condition
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="faultstring" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Human readable explaination of the error or
-						condition</xs:documentation>
+                        condition</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="faultactor" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Information on the system responsible for the
-						error or condition</xs:documentation>
+                        error or condition</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="detail" type="xs:string">
 				<xs:annotation>
 					<xs:documentation>Application specific, detailed information on the
-						error or condition</xs:documentation>
+                        error or condition</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3056,20 +3476,20 @@
 	<xs:complexType name="identity-details-requestType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for returning the identity details from
-				a previous verification enquiry</xs:documentation>
+                a previous verification enquiry</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="dataset-searches">
 				<xs:annotation>
 					<xs:documentation>Set of dataset searches to be executed in this
-						electronic verification enquiry</xs:documentation>
+                        electronic verification enquiry</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="profile-name">
 							<xs:annotation>
 								<xs:documentation>Name of the profile to be called
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:simpleContent>
@@ -3077,7 +3497,7 @@
 										<xs:attribute name="version" type="xs:token">
 											<xs:annotation>
 												<xs:documentation>Specific version of the profile to use
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:attribute>
 									</xs:extension>
@@ -3094,7 +3514,7 @@
 										<xs:attribute name="do-search" use="required">
 											<xs:annotation>
 												<xs:documentation>Controls if this search is to be performed
-													or not</xs:documentation>
+                                                    or not</xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token">
@@ -3113,7 +3533,7 @@
 			<xs:element name="individual-name" type="idm:individual-nameType">
 				<xs:annotation>
 					<xs:documentation>Current name of the individual to be verified
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="date-of-birth" type="xs:date">
@@ -3139,13 +3559,13 @@
 			<xs:element name="previous-address" type="idm:addressType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Immediately previous residential address
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="phone-numbers" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Phone numbers associted with the individual
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
@@ -3167,19 +3587,19 @@
 						<xs:element name="employer-phone-number" type="idm:phone-detailsType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Details of employer's phone, for FraudCheck
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="guarantor-phone-number" type="idm:phone-detailsType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Details of guarantor's phone, for FraudCheck
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="referee-phone-number" type="idm:phone-detailsType" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Details of referee's phone, for FraudCheck
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -3213,13 +3633,13 @@
 	<xs:complexType name="previous-enquiry-requestType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for requesting details about a previous
-				enquiry message referenced by the enquiry-id</xs:documentation>
+                enquiry message referenced by the enquiry-id</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="enquiry-id">
 				<xs:annotation>
 					<xs:documentation>enquiry-id of the verification enquiry to
-						retrieve</xs:documentation>
+                        retrieve</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3227,20 +3647,20 @@
 	<xs:complexType name="requestType">
 		<xs:annotation>
 			<xs:documentation>ComplexType for single request messages
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="services" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Set of services to perform on the provided
-						identity data.</xs:documentation>
+                        identity data.</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:choice>
 						<xs:element name="service-name">
 							<xs:annotation>
 								<xs:documentation>Name of the service to be executed
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:simpleContent>
@@ -3248,7 +3668,7 @@
 										<xs:attribute name="version" type="xs:token">
 											<xs:annotation>
 												<xs:documentation>Specific version of the service to use
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:attribute>
 									</xs:extension>
@@ -3259,17 +3679,23 @@
 							<xs:element name="component-name" type="xs:token" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Name of the service components to be executed
-									</xs:documentation>
+                                    </xs:documentation>
 								</xs:annotation>
 							</xs:element>
 						</xs:sequence>
 					</xs:choice>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="consents" type="idm:IDMConsents" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Consents for the different sources
+                    </xs:documentation>
+				</xs:annotation>
+			</xs:element>
 			<xs:element name="individual-name" type="idm:individual-nameType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Current name of the individual to be verified
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="date-of-birth" type="xs:date" minOccurs="0">
@@ -3295,57 +3721,57 @@
 			<xs:element name="previous-address" type="idm:addressType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Immediately previous residential address
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="phone" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details on phone numbers associated with the
-						individual </xs:documentation>
+                        individual </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:sequence>
 						<xs:element name="numbers" minOccurs="0">
 							<xs:annotation>
 								<xs:documentation>Phone numbers associted with the individual
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 							<xs:complexType>
 								<xs:sequence>
 									<xs:element name="home-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Current home phone number
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="mobile-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Current mobile phone number
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="work-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Current work phone number
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="employer-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Details of employer's phone, for FraudCheck
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="guarantor-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Details of guarantor's phone, for
-												FraudCheck</xs:documentation>
+                                                FraudCheck</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:element name="referee-phone-number" type="idm:phone-detailsType" minOccurs="0">
 										<xs:annotation>
 											<xs:documentation>Details of referee's phone, for FraudCheck
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
@@ -3360,7 +3786,7 @@
 									<xs:element name="number" type="idm:phone-numberType">
 										<xs:annotation>
 											<xs:documentation>Phone number to be validated using a pin
-												code.</xs:documentation>
+                                                code.</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 									<xs:choice>
@@ -3384,13 +3810,13 @@
 			<xs:element name="employment" type="idm:employmentType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details of employment, for FraudCheck
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="email-address" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Email address supplied to the National Tenancy
-						Database</xs:documentation>
+                        Database</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
@@ -3402,7 +3828,7 @@
 			<xs:element name="alternative-email-address" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Alternative email address supplied to the
-						National Tenancy Database</xs:documentation>
+                        National Tenancy Database</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
 					<xs:restriction base="xs:token">
@@ -3411,10 +3837,20 @@
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
+			<xs:element name="doc-upload-ref" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reference Number for Document Upload</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:token">
+						<xs:maxLength value="128"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
 			<xs:element name="drivers-licence-details" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Current drivers licence details
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
@@ -3425,12 +3861,27 @@
 			<xs:element name="proof-of-age-details" type="idm:photoid-cardType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Current proof-of-age card details
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="passport-details" type="idm:passport-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Current passport details</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="immigration-details" type="idm:immigration-detailsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Immigration details</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="citizenship-details" type="idm:citizenship-detailsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Citizenship details</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="registration-by-descent-details" type="idm:registration-by-descent-detailsType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Registration by descent details</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="medicare" minOccurs="0">
@@ -3453,7 +3904,7 @@
 						<xs:element name="reference-number">
 							<xs:annotation>
 								<xs:documentation>Digits before the name on the card
-								</xs:documentation>
+                                </xs:documentation>
 							</xs:annotation>
 							<xs:simpleType>
 								<xs:restriction base="xs:integer">
@@ -3462,58 +3913,86 @@
 								</xs:restriction>
 							</xs:simpleType>
 						</xs:element>
+						<xs:element name="middle-name-on-card" type="idm:other-given-nameType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>The applicants middle name as it appears in the medicare card.
+                                </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="date-of-expiry" type="idm:medicare-date-of-expiryType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Medicare card expiry date
+                                </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="card-colour" type="idm:medicare-card-colourType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Medicare card colour
+                                </xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="name-as-on-document" type="idm:name-on-documentType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>name on document</xs:documentation>
+							</xs:annotation>
+						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 			<xs:element name="birth-certificate-details" type="idm:birth-certificate-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details on the birth certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="change-of-name-certificate-details" type="idm:change-of-name-certificate-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details on the change of name certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="marriage-certificate-details" type="idm:marriage-certificate-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details on the marriage certificate
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="device-intelligence-details" type="idm:device-intelligence-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Details to collect a device intelligence
-						assessment</xs:documentation>
+                        assessment</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="knowledge-based-authentication-details" type="idm:knowledge-based-authentication-detailsType" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>The fields needed to generate KBA questions or to provide the answers to KBA
-					    questions</xs:documentation>
+                        questions</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="global-screening-details" type="idm:global-screening-details" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Global Screening Detail</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="client-reference" type="xs:string" use="optional">
 			<xs:annotation>
 				<xs:documentation>Optional identifier that can be used to correlate
-					this transaction with other records. This identifier is returned in
-					the response message.</xs:documentation>
+                    this transaction with other records. This identifier is returned in
+                    the response message.</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="reason-for-enquiry" type="xs:string" use="optional">
 			<xs:annotation>
 				<xs:documentation>Reason this lectronic verification is being
-					requested (anticipated future use for compliance)
-				</xs:documentation>
+                    requested (anticipated future use for compliance)
+                </xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="enquiry-id" type="xs:token" use="optional">
 			<xs:annotation>
 				<xs:documentation>Previous enquiry identifiier for multi-pass
-					transactions</xs:documentation>
+                    transactions</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 	</xs:complexType>
@@ -3525,13 +4004,13 @@
 	<xs:element name="policy-score" type="xs:int">
 		<xs:annotation>
 			<xs:documentation>The overall policy score for the device.
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="policy-score-reason-code" type="xs:string">
 		<xs:annotation>
 			<xs:documentation>The reason codes underlying the policy score.
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="device-intelligence-response">
@@ -3540,14 +4019,42 @@
 				<xs:element ref="idm:device-status"/>
 				<xs:element ref="idm:policy-score"/>
 				<xs:element ref="idm:policy-score-reason-code" maxOccurs="unbounded"/>
+				<xs:element name="params-response" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Message element that contains a set of parameters
+		            </xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="param" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="idm:restricted-param">
+										<xs:attribute name="key" type="xs:token" use="required"/>  
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>									
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>		
 			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="face-to-face-response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="booking-url" type="xs:string" minOccurs="0"/>
+				<xs:element name="manage-booking-url" type="xs:string" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="idm:service-result-attributes"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:simpleType name="weight-type">
 		<xs:annotation>
 			<xs:documentation>A type to define all weightings used within the
-				Fraud Assessment module. This only has two decimal places and allows
-				weights from 0.00 to 1.00.</xs:documentation>
+                Fraud Assessment module. This only has two decimal places and allows
+                weights from 0.00 to 1.00.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:totalDigits value="3"/>
@@ -3559,8 +4066,8 @@
 	<xs:simpleType name="score-type">
 		<xs:annotation>
 			<xs:documentation>A type to define all scores used within the Fraud
-				Assessment module. This has one decimal place and allows values from
-				0 to 100.</xs:documentation>
+                Assessment module. This has one decimal place and allows values from
+                0 to 100.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:totalDigits value="4"/>
@@ -3572,8 +4079,8 @@
 	<xs:simpleType name="threshold-type">
 		<xs:annotation>
 			<xs:documentation>A type to define all scores used within the Fraud
-				Assessment module. This has one decimal place and allows values from
-				0 to 100.</xs:documentation>
+                Assessment module. This has one decimal place and allows values from
+                0 to 100.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:decimal">
 			<xs:totalDigits value="4"/>
@@ -3585,26 +4092,36 @@
 	<xs:simpleType name="fraud-result-type">
 		<xs:annotation>
 			<xs:documentation>Enumeration of results of fraud assessment for both
-				the overall fraud assessment and the Assessment Factors.
-			</xs:documentation>
+                the overall fraud assessment and the Assessment Factors.
+            </xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="PASS">
 				<xs:annotation>
 					<xs:documentation>The enquiry was given a score greater than or
-						equal to the threshold for this criteria.</xs:documentation>
+                        equal to the threshold for this criteria.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="FAIL">
 				<xs:annotation>
 					<xs:documentation>The enquiry was given a score greater less than
-						the threshold for this criteria.</xs:documentation>
+                        the threshold for this criteria.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="ERROR">
 				<xs:annotation>
 					<xs:documentation>An error occured while determining the score for
-						this criteria.</xs:documentation>
+                        this criteria.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="TIMEOUT">
+				<xs:annotation>
+					<xs:documentation>A timeout occured while executing the fraud assessment factor.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="NOT_EXECUTED">
+				<xs:annotation>
+					<xs:documentation>Fraud assessment factor is not executed.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -3612,55 +4129,65 @@
 	<xs:simpleType name="fraud-assessment-factor-type-type">
 		<xs:annotation>
 			<xs:documentation>Enumeration of values that the assessment-factor
-				type can contain.</xs:documentation>
+                type can contain.</xs:documentation>
 		</xs:annotation>
 		<xs:restriction base="xs:token">
 			<xs:enumeration value="DVI">
 				<xs:annotation>
 					<xs:documentation>The Device Intelligence assessment factor.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KBA">
 				<xs:annotation>
 					<xs:documentation>The Knowledge Bases Authentication assessment
-						factor.</xs:documentation>
+                        factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KYC_PEP">
 				<xs:annotation>
 					<xs:documentation>The KYC PolKnowledge Bases Authentication
-						assessment factor.</xs:documentation>
+                        assessment factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KYC_SFD">
 				<xs:annotation>
 					<xs:documentation>The KYC Shared Fraud Bases Authentication
-						assessment factor.</xs:documentation>
+                        assessment factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KYC_SNC">
 				<xs:annotation>
 					<xs:documentation>The KYC Sanctions Bases Authentication
-						assessment factor.</xs:documentation>
+                        assessment factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="KYC_VLC">
 				<xs:annotation>
 					<xs:documentation>The KYC Velocity Bases Authentication
-						assessment factor.</xs:documentation>
+                        assessment factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="PNV">
 				<xs:annotation>
 					<xs:documentation>The Phone Number Verification assessment factor.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 			<xs:enumeration value="SFA">
 				<xs:annotation>
 					<xs:documentation>The Second Factor Authentication assessment
-						factor.</xs:documentation>
+                        factor.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WBC_BLOCK">
+				<xs:annotation>
+					<xs:documentation>Black list assessment factor.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="WBC_REFER">
+				<xs:annotation>
+					<xs:documentation>Refer list assessment factor.</xs:documentation>
 				</xs:annotation>
 			</xs:enumeration>
 		</xs:restriction>
@@ -3672,12 +4199,17 @@
 			<xs:element name="weight" type="idm:weight-type"/>
 			<xs:element name="threshold" type="idm:threshold-type"/>
 			<xs:element name="result" type="idm:fraud-result-type"/>
+			<xs:element name="deal-breaker" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes whether the assessment factor is deal breaker or not.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="assessment-factors">
 		<xs:annotation>
 			<xs:documentation>The collection of assessment factors used to
-				calculate the fraud assessment.</xs:documentation>
+                calculate the fraud assessment.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -3688,7 +4220,7 @@
 	<xs:element name="assessment-factor" type="idm:fraud-assessment-factor-type">
 		<xs:annotation>
 			<xs:documentation>Component Assessment factor used to calculate the
-				fraud assessment.</xs:documentation>
+                fraud assessment.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="fraud-assessment-response">
@@ -3704,13 +4236,13 @@
 	<xs:element name="phone-number" type="idm:phone-numberType">
 		<xs:annotation>
 			<xs:documentation>An Australian phone number with the leading zero
-				and area code.</xs:documentation>
+                and area code.</xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="phone-status" type="xs:string">
 		<xs:annotation>
 			<xs:documentation>The result of the verification of the phone number.
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<!-- Make this an enumeration -->
 	</xs:element>
@@ -3732,7 +4264,7 @@
 	<xs:element name="authentication-outcome" type="xs:boolean">
 		<xs:annotation>
 			<xs:documentation>The result of the verification. This will be undertaken within IDM so no error value needs to be returned.
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="phone-authentication-response">
@@ -3753,7 +4285,7 @@
 	<xs:complexType name="component-outcome-type">
 		<xs:annotation>
 			<xs:documentation>Overall outcome of the verification
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="component-name" type="idm:component-name-type">
@@ -3764,13 +4296,13 @@
 			<xs:element name="indicator" type="idm:indicator">
 				<xs:annotation>
 					<xs:documentation>Classification of the verification-score in to an outcome category. Usually one of: accept, undecided or reject
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="total-points" type="idm:total-points">
 				<xs:annotation>
 					<xs:documentation>Total points for the verification
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3780,14 +4312,14 @@
 			<xs:element name="overall-outcome" type="idm:indicator">
 				<xs:annotation>
 					<xs:documentation>Overall Outcome for Id Matrix Suite
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="component-outcomes" type="idm:component-outcome-type" minOccurs="0" maxOccurs="unbounded">
 				<xs:annotation>
 					<xs:documentation>A break down of the components that created the
-						overall outcome
-					</xs:documentation>
+                        overall outcome
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
@@ -3798,43 +4330,50 @@
 				<xs:element ref="idm:verification-response" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							verification
-						</xs:documentation>
+                            verification
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element ref="idm:fraud-assessment-response" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							fraud assessment
-						</xs:documentation>
+                            fraud assessment
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element ref="idm:phone-verification-responses" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							phone verification
-						</xs:documentation>
+                            phone verification
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element ref="idm:phone-authentication-responses" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							phone authentication
-						</xs:documentation>
+                            phone authentication
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element ref="idm:device-intelligence-response" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							device intelligence
-						</xs:documentation>
+                            device intelligence
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element ref="idm:knowledge-based-authentication-response" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation>Information associated with the execution of the
-							knowledge based authentication
-						</xs:documentation>
+                            knowledge based authentication
+                        </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="idm:face-to-face-response" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Information associated with the execution of the
+                            face to face request
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
@@ -3845,8 +4384,8 @@
 			<xs:element name="response-outcome" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Information regarding the outcome of the ID
-						Matrix operation
-					</xs:documentation>
+                        Matrix operation
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
@@ -3857,14 +4396,14 @@
 			<xs:element ref="idm:component-responses" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Information regarding the breakdown of the
-						components
-					</xs:documentation>
+                        components
+                    </xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="error" minOccurs="0">
 				<xs:annotation>
 					<xs:documentation>Information associated to application errors.
-					</xs:documentation>
+                    </xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
 					<xs:complexContent>
@@ -3878,27 +4417,27 @@
 		<xs:complexType>
 			<xs:annotation>
 				<xs:documentation>ComplexType for single
-					response messages
-				</xs:documentation>
+                    response messages
+                </xs:documentation>
 			</xs:annotation>
 			<xs:sequence minOccurs="0">
 				<xs:element name="verification-outcome">
 					<xs:annotation>
 						<xs:documentation>Overall outcome of the verification
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="indicator" type="idm:indicator">
 								<xs:annotation>
 									<xs:documentation>Classification of the verification-score in to an outcome category. Usually one of: accept, undecided or reject
-									</xs:documentation>
+                                    </xs:documentation>
 								</xs:annotation>
 							</xs:element>
 							<xs:element name="total-points" type="idm:total-points">
 								<xs:annotation>
 									<xs:documentation>Total points for the verification
-									</xs:documentation>
+                                    </xs:documentation>
 								</xs:annotation>
 							</xs:element>
 							<xs:element name="self-verification-url" type="xs:anyURI" minOccurs="0"/>
@@ -3908,31 +4447,36 @@
 				<xs:element name="rules-results">
 					<xs:annotation>
 						<xs:documentation>Results of the rules/decision engine.
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="rule-result" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Result of an individual rule
-									</xs:documentation>
+                                    </xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="indicator" type="idm:indicator">
 											<xs:annotation>
 												<xs:documentation>Classification of the verification-score in to an outcome category. Usually one of: accept, undecided or reject
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="reason" maxOccurs="unbounded">
 											<xs:annotation>
 												<xs:documentation>Description of the reason for the decision indicator
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:simpleType>
 												<xs:restriction base="xs:token"/>
 											</xs:simpleType>
+										</xs:element>
+										<xs:element name="matrixrule" type="xs:string" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Matrix rule which resulted in the decision.</xs:documentation>
+											</xs:annotation>
 										</xs:element>
 									</xs:sequence>
 									<xs:attribute name="name" type="xs:token" use="required"/>
@@ -3944,7 +4488,7 @@
 				<xs:element name="analysis-results">
 					<xs:annotation>
 						<xs:documentation>Computed points from the raw search results
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
@@ -3954,7 +4498,7 @@
 										<xs:element name="category">
 											<xs:annotation>
 												<xs:documentation>Dataset search category this result belongs to
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -3965,7 +4509,7 @@
 										<xs:element name="search-name" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>Dataset search name used in this result
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -3976,7 +4520,7 @@
 										<xs:element name="raw-score" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>Raw match score returned by the search
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -3987,7 +4531,7 @@
 										<xs:element name="minimum-value" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>Minimum accept score for the search
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -3998,7 +4542,7 @@
 										<xs:element name="filtered-score" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>The score after filtering with the minimum-value
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4009,7 +4553,7 @@
 										<xs:element name="weight" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>The weight applied to the filtered score to compute the points for this result
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4020,7 +4564,7 @@
 										<xs:element name="points" minOccurs="1" maxOccurs="1">
 											<xs:annotation>
 												<xs:documentation>The weighted points for this search.
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4031,14 +4575,14 @@
 										<xs:element name="contributing-factors">
 											<xs:annotation>
 												<xs:documentation>Factors contributing to the overall verification from this search
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="name-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Name match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4049,7 +4593,7 @@
 													<xs:element name="address-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Address match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4060,7 +4604,7 @@
 													<xs:element name="date-of-birth-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Date of birth match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4071,7 +4615,7 @@
 													<xs:element name="phone-number-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Phone number match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4082,7 +4626,7 @@
 													<xs:element name="drivers-licence-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Drivers licence match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4093,7 +4637,7 @@
 													<xs:element name="passport-number-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Passport number match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4104,7 +4648,7 @@
 													<xs:element name="document-identifier-match" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Other document identifier match was obtained in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4115,7 +4659,7 @@
 													<xs:element name="transaction-history" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Transaction history was verified in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4126,7 +4670,7 @@
 													<xs:element name="entitlement-to-work" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Entitlement to work was verified in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4137,7 +4681,7 @@
 													<xs:element name="multiple-identities" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>The identity searched was observed to have more than identity in this search
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4163,14 +4707,14 @@
 							<xs:element name="search-result" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Result details for a individual search result
-									</xs:documentation>
+                                    </xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
 										<xs:element name="individual-name" type="idm:individual-nameType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current name of the individual to be verified
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="date-of-birth" nillable="true" minOccurs="0">
@@ -4200,56 +4744,56 @@
 										<xs:element name="current-address" type="idm:addressType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current residential address
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="previous-address" type="idm:addressType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Immediately previous residential address
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="phone-numbers" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Phone numbers associted with the individual
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="home-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Current home phone number
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="mobile-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Current mobile phone number
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="work-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Current work phone number
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="employer-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Details of employers phone, for FraudCheck
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="guarantor-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Details of guarantors phone, for FraudCheck
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 													<xs:element name="referee-phone-number" type="idm:phone-detailsType-match-attributes" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Details of referees phone, for FraudCheck
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 													</xs:element>
 												</xs:sequence>
@@ -4258,13 +4802,13 @@
 										<xs:element name="employment" type="idm:employmentType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Details of employment, for FraudCheck
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="email-address" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Email address supplied to the National Tenancy Database
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4277,7 +4821,7 @@
 										<xs:element name="alternative-email-address" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Alternative email address supplied to the National Tenancy Database
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4290,25 +4834,43 @@
 										<xs:element name="drivers-licence-details" type="idm:photoid-cardType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current drivers licence details
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="proof-of-age-details" type="idm:photoid-cardType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current proof-of-age card details
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="passport-details" type="idm:passport-detailsType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current passport details
-												</xs:documentation>
+                                                </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="immigration-details" type="idm:immigration-detailsType-match-attributes" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Current immigration details
+                                                </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="citizenship-details" type="idm:citizenship-detailsType-match-attributes" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Current citizenship details
+                                                </xs:documentation>
+											</xs:annotation>
+										</xs:element>
+										<xs:element name="registration-by-descent-details" type="idm:registration-by-descent-detailsType-match-attributes" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Current registration by descent details
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="medicare" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Current Medicare Card details
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
@@ -4327,11 +4889,29 @@
 													<xs:element name="reference-number" nillable="true" minOccurs="0">
 														<xs:annotation>
 															<xs:documentation>Digits before the name on the card
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
 																<xs:extension base="xs:token">
+																	<xs:attributeGroup ref="idm:match-attributes"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="expiry-date" nillable="true" minOccurs="0">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
+																	<xs:attributeGroup ref="idm:match-attributes"/>
+																</xs:extension>
+															</xs:simpleContent>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="card-colour" nillable="true" minOccurs="0">
+														<xs:complexType>
+															<xs:simpleContent>
+																<xs:extension base="xs:string">
 																	<xs:attributeGroup ref="idm:match-attributes"/>
 																</xs:extension>
 															</xs:simpleContent>
@@ -4344,27 +4924,27 @@
 										<xs:element name="birth-certificate-details" type="idm:birth-certificate-detailsType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Details on the birth certificate
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="change-of-name-certificate-details" type="idm:change-of-name-certificate-detailsType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Details on the change of name certificate
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 										<xs:element name="marriage-certificate-details" type="idm:marriage-certificate-detailsType-match-attributes" minOccurs="0">
 											<xs:annotation>
 												<xs:documentation>Details on the marriage certificate
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 										</xs:element>
 									</xs:sequence>
 									<xs:attribute name="search-name" type="xs:token" use="required">
 										<xs:annotation>
 											<xs:documentation>Name of the dataset used for this
-												verification
-											</xs:documentation>
+                                                verification
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:attribute>
 									<xs:attribute name="search-type" use="required">
@@ -4379,13 +4959,13 @@
 									<xs:attributeGroup ref="idm:match-attributes">
 										<xs:annotation>
 											<xs:documentation>Attributes for match meta-data
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:attributeGroup>
 									<xs:attribute name="record-create-date" type="xs:date" use="optional">
 										<xs:annotation>
 											<xs:documentation>Date the record matched was created in the dataset
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:attribute>
 								</xs:complexType>
@@ -4396,15 +4976,15 @@
 				<xs:element name="records">
 					<xs:annotation>
 						<xs:documentation>Contents of records matched during searches
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="fraud-file-record" minOccurs="0" maxOccurs="unbounded">
 								<xs:annotation>
 									<xs:documentation>Details of a fraud file record matched during
-										searches
-									</xs:documentation>
+                                        searches
+                                    </xs:documentation>
 								</xs:annotation>
 								<xs:complexType>
 									<xs:sequence>
@@ -4431,7 +5011,7 @@
 										<xs:element name="reporting-subscriber">
 											<xs:annotation>
 												<xs:documentation>Short name of the subscriber who recorded the fraud
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4442,7 +5022,7 @@
 										<xs:element name="reference-number">
 											<xs:annotation>
 												<xs:documentation>Reference number for the fraud case from the reporting subscriber
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4453,7 +5033,7 @@
 										<xs:element name="product">
 											<xs:annotation>
 												<xs:documentation>Financial product targetted by the fraud
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4466,7 +5046,7 @@
 										<xs:element name="fraud-type">
 											<xs:annotation>
 												<xs:documentation>Classification of the perpetrated fraud
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4479,14 +5059,14 @@
 										<xs:element name="fraud-subtype">
 											<xs:annotation>
 												<xs:documentation>Subclassifications of the perpetrated fraud
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:sequence>
 													<xs:element name="subclass" minOccurs="0" maxOccurs="7">
 														<xs:annotation>
 															<xs:documentation>Individal subclassification of the perpetrated fraud
-															</xs:documentation>
+                                                            </xs:documentation>
 														</xs:annotation>
 														<xs:complexType>
 															<xs:simpleContent>
@@ -4502,7 +5082,7 @@
 										<xs:element name="employment-status">
 											<xs:annotation>
 												<xs:documentation>Employment status of the subject
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4515,7 +5095,7 @@
 										<xs:element name="fraud-subject-role">
 											<xs:annotation>
 												<xs:documentation>Role of the subject in the fraudulent application for credit
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4528,7 +5108,7 @@
 										<xs:element name="other-comment">
 											<xs:annotation>
 												<xs:documentation>Comment on the fraud file
-												</xs:documentation>
+                                                </xs:documentation>
 											</xs:annotation>
 											<xs:complexType>
 												<xs:simpleContent>
@@ -4610,7 +5190,7 @@
 									<xs:attribute name="record-create-date" type="xs:date" use="optional">
 										<xs:annotation>
 											<xs:documentation>Date the record matched was created in the dataset
-											</xs:documentation>
+                                            </xs:documentation>
 										</xs:annotation>
 									</xs:attribute>
 								</xs:complexType>
@@ -4721,7 +5301,7 @@
 																	</xs:annotation>
 																	<xs:complexType>
 																		<xs:sequence>
-																			<xs:element name="name" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="name" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The name of the entity</xs:documentation>
 																				</xs:annotation>
@@ -4731,7 +5311,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="list-id" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="list-id" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The id of the list the entity is on</xs:documentation>
 																				</xs:annotation>
@@ -4741,7 +5321,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="list-code" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="list-code" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The code of the list the entity is on</xs:documentation>
 																				</xs:annotation>
@@ -4751,7 +5331,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="entity-type" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="entity-type" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The type of entity</xs:documentation>
 																				</xs:annotation>
@@ -4781,7 +5361,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="title" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="title" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The title of the entity</xs:documentation>
 																				</xs:annotation>
@@ -4791,7 +5371,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="source" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="source" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The source of the entity</xs:documentation>
 																				</xs:annotation>
@@ -4801,7 +5381,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="country" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="country" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The country code of residence of the entity</xs:documentation>
 																				</xs:annotation>
@@ -4811,7 +5391,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="country-name" minOccurs="1" maxOccurs="1" nillable="true">
+																			<xs:element name="country-name" nillable="true" minOccurs="1" maxOccurs="1">
 																				<xs:annotation>
 																					<xs:documentation>The country name of the residence of the entity</xs:documentation>
 																				</xs:annotation>
@@ -4821,7 +5401,7 @@
 																					</xs:simpleContent>
 																				</xs:complexType>
 																			</xs:element>
-																			<xs:element name="sdf" minOccurs="0" maxOccurs="unbounded" nillable="true">
+																			<xs:element name="sdf" nillable="true" minOccurs="0" maxOccurs="unbounded">
 																				<xs:annotation>
 																					<xs:documentation>Other information about the entity</xs:documentation>
 																				</xs:annotation>
@@ -4837,13 +5417,13 @@
 																		<xs:attribute name="id" type="xs:int" use="optional">
 																			<xs:annotation>
 																				<xs:documentation>The Accuity Id of the entity.
-																				</xs:documentation>
+                                                                                </xs:documentation>
 																			</xs:annotation>
 																		</xs:attribute>
 																		<xs:attribute name="version" type="xs:string" use="optional">
 																			<xs:annotation>
 																				<xs:documentation>The version of the entity.
-																				</xs:documentation>
+                                                                                </xs:documentation>
 																			</xs:annotation>
 																		</xs:attribute>
 																	</xs:complexType>
@@ -4852,19 +5432,19 @@
 															<xs:attribute name="id" type="xs:int" use="optional">
 																<xs:annotation>
 																	<xs:documentation>The Accuity Id of the entity.
-																	</xs:documentation>
+                                                                    </xs:documentation>
 																</xs:annotation>
 															</xs:attribute>
 															<xs:attribute name="source" type="xs:string" use="optional">
 																<xs:annotation>
 																	<xs:documentation>The source of the entity.
-																	</xs:documentation>
+                                                                    </xs:documentation>
 																</xs:annotation>
 															</xs:attribute>
 															<xs:attribute name="version" type="xs:string" use="optional">
 																<xs:annotation>
 																	<xs:documentation>The version of the entity.
-																	</xs:documentation>
+                                                                    </xs:documentation>
 																</xs:annotation>
 															</xs:attribute>
 														</xs:complexType>
@@ -4898,7 +5478,6 @@
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
-									<!-- ClientId has deliberately been stripped from the Accuity response -->
 									<xs:attribute name="search-result-name" type="xs:token" use="required">
 										<xs:annotation>
 											<xs:documentation>Name of the search that found the accuity details.</xs:documentation>
@@ -4944,6 +5523,7 @@
 											<xs:documentation>The count of total open</xs:documentation>
 										</xs:annotation>
 									</xs:attribute>
+									<!-- ClientId has deliberately been stripped from the Accuity response -->
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
@@ -5092,7 +5672,7 @@
 		<xs:annotation>
 			<xs:documentation>A list of questions for a client undertaking KBA.</xs:documentation>
 		</xs:annotation>
-		<xs:sequence >
+		<xs:sequence>
 			<xs:choice minOccurs="0" maxOccurs="unbounded">
 				<xs:element name="multiple-choice-question" type="idm:kba-multiple-choice-questionType"/>
 				<xs:element name="true-false-question" type="idm:kba-true-false-questionType"/>
@@ -5145,30 +5725,30 @@
 			<xs:documentation>A kba multiple choice question.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-	    	<xs:extension base="idm:kba-questionType">
-		  		<xs:sequence>
-		    		<xs:element name="response-option" type="idm:kba-response-optionType" maxOccurs="unbounded"/>
-		  		</xs:sequence>
-	    	</xs:extension>
-	  	</xs:complexContent>
+			<xs:extension base="idm:kba-questionType">
+				<xs:sequence>
+					<xs:element name="response-option" type="idm:kba-response-optionType" maxOccurs="unbounded"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="kba-free-text-questionType">
 		<xs:annotation>
 			<xs:documentation>A kba free text question.</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
-	    	<xs:extension base="idm:kba-questionType"/>
-	  	</xs:complexContent>
+			<xs:extension base="idm:kba-questionType"/>
+		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="kba-true-false-questionType">
 		<xs:annotation>
 			<xs:documentation>A kba true false type question.</xs:documentation>
 		</xs:annotation>
-	  	<xs:complexContent>
+		<xs:complexContent>
 			<xs:extension base="idm:kba-questionType">
 				<xs:sequence>
-		    		<xs:element name="response-option" type="idm:kba-response-optionType" minOccurs="2" maxOccurs="2"/>
-		  		</xs:sequence>
+					<xs:element name="response-option" type="idm:kba-response-optionType" minOccurs="2" maxOccurs="2"/>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -5178,15 +5758,15 @@
 				<xs:documentation>ComplexType for knowledge based authentication response details</xs:documentation>
 			</xs:annotation>
 			<xs:sequence>
-				<xs:element name="questionnaire" type="idm:kba-questionnaireType" />
+				<xs:element name="questionnaire" type="idm:kba-questionnaireType"/>
 				<xs:element name="score" type="idm:kba-overall-scoreType"/>
 				<xs:element name="threshold" type="idm:kba-overall-scoreType"/>
 				<xs:element name="match-indicator" type="idm:kba-match-indicatorType"/>
 			</xs:sequence>
-			<xs:attribute name="question-generation-status" type="idm:kba-question-generation-statusType" use="required" />
-			<xs:attribute name="question-generation-message" type="xs:string" use="required" />
-			<xs:attribute name="scoring-status" type="idm:kba-scoring-statusType" use="required" />
-			<xs:attribute name="scoring-message" type="xs:string" use="required" />
+			<xs:attribute name="question-generation-status" type="idm:kba-question-generation-statusType" use="required"/>
+			<xs:attribute name="question-generation-message" type="xs:string" use="required"/>
+			<xs:attribute name="scoring-status" type="idm:kba-scoring-statusType" use="required"/>
+			<xs:attribute name="scoring-message" type="xs:string" use="required"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:complexType name="kba-answerType">
@@ -5197,7 +5777,7 @@
 			<xs:choice minOccurs="0">
 				<xs:element name="response-option-seq-no-selected" type="idm:kba-sequence-noType">
 					<xs:annotation>
-						<xs:documentation>The sequence number of the response option that the user selected for a yes-no or mult-choice question.</xs:documentation>
+						<xs:documentation>The sequence number of the response option that the user selected for a true-false or mult-choice question.</xs:documentation>
 					</xs:annotation>
 				</xs:element>
 				<xs:element name="free-text-answer" type="xs:string">
@@ -5223,14 +5803,13 @@
 			<xs:documentation>ComplexType for knowledge based authentication request details</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
-			<xs:element name="answers" type="idm:kba-answersType" minOccurs="0" maxOccurs="1">
-			</xs:element>
+			<xs:element name="answers" type="idm:kba-answersType" minOccurs="0" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:element name="request">
 		<xs:annotation>
 			<xs:documentation>Message element that contains a single request
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -5241,7 +5820,7 @@
 	<xs:element name="requests">
 		<xs:annotation>
 			<xs:documentation>Message element that contains a set of requests
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -5252,7 +5831,7 @@
 	<xs:element name="response">
 		<xs:annotation>
 			<xs:documentation>Message element that contains a single response
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -5260,7 +5839,7 @@
 					<xs:attribute name="client-reference" type="xs:string" use="optional">
 						<xs:annotation>
 							<xs:documentation>Optional identifier that can be used to correlate this transaction with other records. This identifier is returned in the response message.
-					</xs:documentation>
+                            </xs:documentation>
 						</xs:annotation>
 					</xs:attribute>
 					<xs:attribute name="enquiry-id" type="xs:token" use="required"/>
@@ -5272,14 +5851,14 @@
 	<xs:element name="responses">
 		<xs:annotation>
 			<xs:documentation>Message element that contains a set of responses
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element ref="idm:response" maxOccurs="unbounded">
 					<xs:annotation>
 						<xs:documentation>Message element that contains a single response
-						</xs:documentation>
+                        </xs:documentation>
 					</xs:annotation>
 				</xs:element>
 			</xs:sequence>
@@ -5288,7 +5867,7 @@
 	<xs:element name="previous-enquiry-identity-details">
 		<xs:annotation>
 			<xs:documentation>Message element to request identity details on a previous verification enquiry referenced by the enquiry-id
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -5309,7 +5888,7 @@
 	<xs:element name="previous-enquiry-request">
 		<xs:annotation>
 			<xs:documentation>Message element to request details on a verification request message referenced by the enquiry-id
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -5320,7 +5899,7 @@
 	<xs:element name="previous-enquiry-response">
 		<xs:annotation>
 			<xs:documentation>Message element to request details on a verification response message referenced by the enquiry-id
-			</xs:documentation>
+            </xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:complexContent>
@@ -5328,4 +5907,6 @@
 			</xs:complexContent>
 		</xs:complexType>
 	</xs:element>
+	
+	
 </xs:schema>
