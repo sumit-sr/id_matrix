@@ -15,7 +15,7 @@ class VedaIdmatrix::Response < ActiveRecord::Base
 
   def error
     if self.xml && !self.success?
-      self.xml 
+      self.xml
     else
       "No error"
     end

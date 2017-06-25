@@ -1,6 +1,7 @@
 require 'bundler/setup'
 require 'veda_idmatrix'
 require 'shoulda/matchers'
+require 'pry'
 Bundler.setup
 
 ActiveRecord::Base.establish_connection(

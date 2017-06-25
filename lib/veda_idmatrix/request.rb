@@ -50,12 +50,24 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def id_matrix_operation
-    consents = {
-      :consent => {
-        :attributes =>{ :status => "1"},
-        :value => "VEDA-CBCONS"
-      }
-    }
+    # consents = {
+    #   :consent => {
+    #     :attributes =>{ :status => "1"},
+    #     :value => "VEDA-CBCONS"
+    #   },
+    #   :consent => {
+    #     :attributes =>{ :status => "1"},
+    #     :value => "DL"
+    #   },
+    #   :consent => {
+    #     :attributes =>{ :status => "1"},
+    #     :value => "MEDICARE-CARD"
+    #   },
+    #   :consent => {
+    #     :attributes =>{ :status => "1"},
+    #     :value => "DFAT-AP"
+    #   }
+    # }
 
     individual_name = {
       :'family-name' => (self.entity[:family_name]).to_s,
@@ -97,7 +109,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     }
 
     return {
-      :'consents' => consents,
+      # :'consents' => consents,
       :'individual-name' => individual_name,
       :'date-of-birth' => date_of_birth,
       :'gender' => gender,
