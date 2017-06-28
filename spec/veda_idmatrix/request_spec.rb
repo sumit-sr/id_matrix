@@ -1,17 +1,16 @@
 require 'spec_helper'
 
-
 describe VedaIdmatrix::Request do
   it { should have_one(:response).dependent(:destroy) }
+
   it { should validate_presence_of(:ref_id) }
   it { should validate_presence_of(:access) }
   it { should validate_presence_of(:entity) }
   it { should validate_presence_of(:enquiry) }
-  
 
-  before(:all) do 
+  before(:each) do
     @config = YAML.load_file('dev_config.yml')
-    @access_hash = 
+    @access_hash =
       {
         :url => @config["url"],
         :access_code => @config["access_code"],
@@ -94,16 +93,18 @@ describe VedaIdmatrix::Request do
     }
 
     @enquiry_hash = {
-      :client_reference => "123456", 
+      :client_reference => "123456",
       :reason_for_enquiry => "Test"
     }
 
-    @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
+    @request = VedaIdmatrix::Request.new(ref_id: 1, access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
   end
 
   describe "with valid access credentials" do
-
-    
+    before(:each) do
+      # prep the soap content
+      @request.to_soap
+    end
 
     describe ".access" do
       it "returns not nil" do
@@ -114,7 +115,7 @@ describe VedaIdmatrix::Request do
         @request.save
         expect(@request.access).to_not be(nil)
       end
-    end 
+    end
 
     describe ".entity" do
       it "returns not nil" do
@@ -152,10 +153,12 @@ describe VedaIdmatrix::Request do
       it "sets .soap" do
         @request.to_soap
         expect(@request.soap).to_not eq(nil)
-      end 
+      end
 
-      it "runs after initialize" do
-        expect(@request.soap).to_not eq(nil)
+      it "runs on post initialize" do
+        allow(HTTParty).to receive(:post).and_return(nil)
+        expect(@request).to receive(:to_soap)
+        @request.post
       end
     end
 
@@ -170,11 +173,11 @@ describe VedaIdmatrix::Request do
         expect(@request.xml).to_not eq(nil)
       end
 
-      it "includes 'client-reference' in xml" do 
+      it "includes 'client-reference' in xml" do
         expect(@request.xml).to include('idm:request client-reference="123456"')
       end
 
-      it "includes 'reason-for-enquiry' in xml" do 
+      it "includes 'reason-for-enquiry' in xml" do
         expect(@request.xml).to include('reason-for-enquiry="Test"')
       end
 
@@ -198,7 +201,6 @@ describe VedaIdmatrix::Request do
         expect(@request.xml).to include('<idm:gender>male</idm:gender>')
       end
 
-
       it "includes 'home-phone-number' in xml" do
         expect(@request.xml).to include('<idm:home-phone-number verify="true">0312345678</idm:home-phone-number>')
       end
@@ -220,7 +222,7 @@ describe VedaIdmatrix::Request do
       end
 
       describe "without unformatted address as input" do
-        before do
+        before(:each) do
           @entity_hash = {
               :family_name => "Potter",
               :first_given_name => "James",
@@ -292,41 +294,42 @@ describe VedaIdmatrix::Request do
               },
               :device_intelligence_org_id => "org-abc",
               :device_intelligence_session_id => "X123"
-            }
-            @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash) 
-          end
+          }
+          @request = VedaIdmatrix::Request.new(access: @access_hash, entity: @entity_hash, enquiry: @enquiry_hash)
+          @request.to_soap
+        end
 
-      it "includes 'property' in xml" do
-        expect(@request.xml).to include('<idm:property>Potter Manor</idm:property>')
-      end
+        it "includes 'property' in xml" do
+          expect(@request.xml).to include('<idm:property>Potter Manor</idm:property>')
+        end
 
-      it "includes 'unit-number' in xml" do
-        expect(@request.xml).to include('<idm:unit-number>3</idm:unit-number>')
-      end
+        it "includes 'unit-number' in xml" do
+          expect(@request.xml).to include('<idm:unit-number>3</idm:unit-number>')
+        end
 
-      it "includes 'street-number' in xml" do
-        expect(@request.xml).to include('<idm:street-number>4</idm:street-number>')
-      end
+        it "includes 'street-number' in xml" do
+          expect(@request.xml).to include('<idm:street-number>4</idm:street-number>')
+        end
 
-      it "includes 'street-name' in xml" do
-        expect(@request.xml).to include('<idm:street-name>Privet</idm:street-name>')
-      end
-      
-      it "includes 'street-type' in xml" do
-        expect(@request.xml).to include('<idm:street-type>Drive</idm:street-type>')
-      end
+        it "includes 'street-name' in xml" do
+          expect(@request.xml).to include('<idm:street-name>Privet</idm:street-name>')
+        end
 
-      it "includes 'suburb' in xml" do
-        expect(@request.xml).to include('<idm:suburb>Little Whinging</idm:suburb>')
-      end
+        it "includes 'street-type' in xml" do
+          expect(@request.xml).to include('<idm:street-type>Drive</idm:street-type>')
+        end
 
-      it "includes 'state' in xml" do
-        expect(@request.xml).to include('<idm:state>NSW</idm:state>')
-      end
+        it "includes 'suburb' in xml" do
+          expect(@request.xml).to include('<idm:suburb>Little Whinging</idm:suburb>')
+        end
 
-      it "includes 'postcode' in xml" do
-        expect(@request.xml).to include('<idm:postcode>2999</idm:postcode>')
-      end
+        it "includes 'state' in xml" do
+          expect(@request.xml).to include('<idm:state>NSW</idm:state>')
+        end
+
+        it "includes 'postcode' in xml" do
+          expect(@request.xml).to include('<idm:postcode>2999</idm:postcode>')
+        end
 
       end
 
@@ -335,7 +338,6 @@ describe VedaIdmatrix::Request do
           expect(@request.xml).to include('<idm:unformatted-address>Potter Manor 3/4 Privet Drive Little Whinging NSW 2999</idm:unformatted-address>')
         end
       end
-
     end
 
     describe ".to_xml_body" do
@@ -354,7 +356,34 @@ describe VedaIdmatrix::Request do
         expect(@request.id_matrix_operation.class).to eq(Hash)
       end
     end
+  end
 
+  describe ".to_dom" do
+    it "generates an XML doc from a hash" do
+      data = {:example => 123}
+      # p @request.to_dom('spec', data).to_xml
+      expect(@request.to_dom('spec', data).to_xml).to eq("<?xml version=\"1.0\"?>\n<spec>\n  <example>123</example>\n</spec>\n")
+    end
+
+    it "takes optional attributes" do
+      data = {:example => 123}
+      # p @request.to_dom('spec', data, {:foo => 'bar'}).to_xml
+      expect(@request.to_dom('spec', data, {:foo => 'bar'}).to_xml).to eq("<?xml version=\"1.0\"?>\n<spec foo=\"bar\">\n  <example>123</example>\n</spec>\n")
+    end
+
+    it "sets attributes passed as :attributes" do
+      # data = {:attributes => {:foo => 'bar'}, :example => 123 }
+      data = {:example => {:attributes => {:foo => 'bar'}, :value => 123} }
+      # p @request.to_dom('spec', data).to_xml
+      expect(@request.to_dom('spec', data).to_xml).to eq("<?xml version=\"1.0\"?>\n<spec>\n  <example foo=\"bar\">123</example>\n</spec>\n")
+    end
+
+    it "only sets attributes passed as :attributes when :value is present" do
+      # data = {:attributes => {:foo => 'bar'}, :example => 123 }
+      data = {:example => {:attributes => {:foo => 'bar'}, :not_value => 123} }
+      # p @request.to_dom('spec', data).to_xml
+      expect(@request.to_dom('spec', data).to_xml).to eq("<?xml version=\"1.0\"?>\n<spec>\n  <example>\n  <attributes>\n  <foo>bar</foo>\n</attributes>\n  <not_value>123</not_value>\n</example>\n</spec>\n")
+    end
   end
 end
-  
+
