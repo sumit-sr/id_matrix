@@ -5,6 +5,14 @@ class VedaIdmatrix::Response < ActiveRecord::Base
   serialize :headers
   serialize :struct
 
+  def initialize(options={})
+    if options[:headers]
+      options[:headers] = (options[:headers].to_h rescue {}) unless options[:headers].is_a?(Hash)
+    end
+    super(options)
+  end
+
+
   def to_hash
     if self.xml
       Hash.from_xml(self.xml)
