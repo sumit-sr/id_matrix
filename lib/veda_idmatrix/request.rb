@@ -108,6 +108,11 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:drivers_licence_number])
     }
 
+    passport_details = {
+      :'country-code' => (self.entity[:passport_country_code]),
+      :'number' => (self.entity[:passport_number])
+    }
+
     return {
       # :'consents' => consents,
       :'individual-name' => individual_name,
@@ -116,7 +121,8 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'current-address' => current_address,
       :'phone' => phone,
       :'email-address' => email_address,
-      :'drivers-licence-details' => drivers_licence_details
+      :'drivers-licence-details' => drivers_licence_details,
+      :'passport-details' => passport_details
     }
   end
 
