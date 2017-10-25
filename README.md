@@ -59,7 +59,9 @@ Attributes for entity_hash:
         :email_address => "harry.potter@example.com",
         :drivers_licence_state_code => "NSW",
         :drivers_licence_number => "1234567890",
-        :drivers_licence_card_number => "1234567890"
+        :drivers_licence_card_number => "1234567890",
+        :passport_country_code => "AUS",
+        :passport_number => "1234567890"
     }
 
     if unformatted address is present as below it will be used instead of the formatted address above

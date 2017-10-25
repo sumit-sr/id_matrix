@@ -103,9 +103,21 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     email_address = (self.entity[:email_address])
 
+    medicare_details = {
+      :'card-number' => (self.entity[:medicare_card_number]),
+      :'reference-number' => (self.entity[:medicare_reference_number]),
+      :'card-colour' => (self.entity[:medicare_card_color]),
+      :'date-of-expiry' => (self.entity[:medicare_card_expiry])
+    }
+
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
       :'number' => (self.entity[:drivers_licence_number])
+    }
+
+    passport_details = {
+      :'country-code' => (self.entity[:passport_country_code]),
+      :'number' => (self.entity[:passport_number])
     }
 
     return {
@@ -116,7 +128,9 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'current-address' => current_address,
       :'phone' => phone,
       :'email-address' => email_address,
-      :'drivers-licence-details' => drivers_licence_details
+      :'medicare' => medicare_details,
+      :'drivers-licence-details' => drivers_licence_details,
+      :'passport-details' => passport_details
     }
   end
 

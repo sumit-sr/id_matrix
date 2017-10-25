@@ -56,7 +56,9 @@ describe VedaIdmatrix::Response do
         # :place_of_birth => "Little Whinging",
         # :country_of_birth => "AUS",
         :medicare_card_number => "2951636282",
-        :medicare_reference_number => "1"
+        :medicare_reference_number => "1",
+        :medicare_card_color => "G",
+        :medicare_card_expiry => "2000-01"
         # :birth_cert_reg_number => "12345679890",
         # :birth_cert_reg_state =>"NSW",
         # :birth_cert_reg_date => "1980-08-02",
