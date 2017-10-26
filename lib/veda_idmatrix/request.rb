@@ -10,6 +10,10 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   validates :entity, presence: true
   validates :enquiry, presence: true
 
+  DETAIL_ORDER =  [:'individual-name', :'date-of-birth', :'gender',
+          :'current-address', :'phone', :'email-address',
+          :'drivers-licence-details', :'passport-details', :'medicare']
+
   def schema
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-12.xsd', File.dirname(__FILE__) )
     File.read(fname)
@@ -36,10 +40,13 @@ class VedaIdmatrix::Request < ActiveRecord::Base
         data = data[:value]
       end
 
+      # Enforce order on details
       if data.is_a? Hash
         builder.send(node, attrs) do
-          data.keys.each do |k|
-            builder << to_dom(k, data[k]).root.to_xml
+          DETAIL_ORDER.each do |k|
+            if data.include? k
+              builder << to_dom(k, data[k]).root.to_xml
+            end
           end
         end
       else
@@ -103,12 +110,15 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     email_address = (self.entity[:email_address])
 
-    medicare_details = {
-      :'card-number' => (self.entity[:medicare_card_number]),
-      :'reference-number' => (self.entity[:medicare_reference_number]),
-      :'card-colour' => (self.entity[:medicare_card_color]),
-      :'date-of-expiry' => (self.entity[:medicare_card_expiry])
-    }
+    medicare_details = {}
+    unless self.entity[:medicare_card_number].blank?
+      medicare_details = {
+        :'card-number' => (self.entity[:medicare_card_number]),
+        :'reference-number' => (self.entity[:medicare_reference_number]),
+        :'card-colour' => (self.entity[:medicare_card_color]),
+        :'date-of-expiry' => (self.entity[:medicare_card_expiry])
+      }
+    end
 
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
@@ -120,7 +130,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:passport_number])
     }
 
-    return {
+    details = {
       # :'consents' => consents,
       :'individual-name' => individual_name,
       :'date-of-birth' => date_of_birth,
@@ -128,10 +138,16 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'current-address' => current_address,
       :'phone' => phone,
       :'email-address' => email_address,
-      :'medicare' => medicare_details,
       :'drivers-licence-details' => drivers_licence_details,
       :'passport-details' => passport_details
     }
+
+    # Have to exclude medicare if details missing
+    unless medicare_details.empty?
+      details[:'medicare'] = medicare_details
+    end
+
+    details
   end
 
   def add_envelope(xml_message, url, username, password, message_id)
