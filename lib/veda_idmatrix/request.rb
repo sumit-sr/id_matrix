@@ -10,9 +10,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   validates :entity, presence: true
   validates :enquiry, presence: true
 
-  DETAIL_ORDER =  [:'individual-name', :'date-of-birth', :'gender',
-          :'current-address', :'phone', :'email-address',
-          :'drivers-licence-details', :'passport-details', :'medicare']
+  DETAIL_ORDER = [:'individual-name', :'date-of-birth', :'gender', :'current-address', :'phone', :'email-address', :'drivers-licence-details', :'passport-details', :'medicare']
 
   def schema
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-12.xsd', File.dirname(__FILE__) )
@@ -57,25 +55,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def id_matrix_operation
-    # consents = {
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "VEDA-CBCONS"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "DL"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "MEDICARE-CARD"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "DFAT-AP"
-    #   }
-    # }
-
     individual_name = {
       :'family-name' => (self.entity[:family_name]).to_s,
       :'first-given-name' => (self.entity[:first_given_name]).to_s,
@@ -142,10 +121,8 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'passport-details' => passport_details
     }
 
-    # Have to exclude medicare if details missing
-    unless medicare_details.empty?
-      details[:'medicare'] = medicare_details
-    end
+    # Have to exclude medicare if details missing #5519
+    details[:'medicare'] = medicare_details unless medicare_details.empty?
 
     details
   end
