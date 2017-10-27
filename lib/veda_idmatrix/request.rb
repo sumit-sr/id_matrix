@@ -29,7 +29,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     self.xml = doc.gsub('<idm:?xml version="1.0"?>','')
   end
 
-  def to_dom(node, data, attrs={} )
+  def to_dom(node, data, attrs={})
     doc = Nokogiri::XML::Builder.new do |builder|
       if data.is_a?(Hash) && data.keys.sort == [:attributes, :value]
         attrs.merge!(data[:attributes])
@@ -50,25 +50,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def id_matrix_operation
-    # consents = {
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "VEDA-CBCONS"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "DL"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "MEDICARE-CARD"
-    #   },
-    #   :consent => {
-    #     :attributes =>{ :status => "1"},
-    #     :value => "DFAT-AP"
-    #   }
-    # }
-
     individual_name = {
       :'family-name' => (self.entity[:family_name]).to_s,
       :'first-given-name' => (self.entity[:first_given_name]).to_s,
@@ -103,12 +84,15 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     email_address = (self.entity[:email_address])
 
-    medicare_details = {
-      :'card-number' => (self.entity[:medicare_card_number]),
-      :'reference-number' => (self.entity[:medicare_reference_number]),
-      :'card-colour' => (self.entity[:medicare_card_color]),
-      :'date-of-expiry' => (self.entity[:medicare_card_expiry])
-    }
+    medicare_details = {}
+    unless self.entity[:medicare_card_number].blank?
+      medicare_details = {
+        :'card-number' => (self.entity[:medicare_card_number]),
+        :'reference-number' => (self.entity[:medicare_reference_number]),
+        :'card-colour' => (self.entity[:medicare_card_color]),
+        :'date-of-expiry' => (self.entity[:medicare_card_expiry])
+      }
+    end
 
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
@@ -120,18 +104,21 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:passport_number])
     }
 
-    return {
-      # :'consents' => consents,
-      :'individual-name' => individual_name,
-      :'date-of-birth' => date_of_birth,
-      :'gender' => gender,
-      :'current-address' => current_address,
-      :'phone' => phone,
-      :'email-address' => email_address,
-      :'medicare' => medicare_details,
-      :'drivers-licence-details' => drivers_licence_details,
-      :'passport-details' => passport_details
-    }
+    # Make sure items generated in order #5519
+    details = ActiveSupport::OrderedHash.new
+    # details[:'consents'] = consents
+    details[:'individual-name'] = individual_name
+    details[:'date-of-birth'] = date_of_birth
+    details[:'gender'] = gender
+    details[:'current-address'] = current_address
+    details[:'phone']=  phone
+    details[:'email-address'] = email_address
+    details[:'drivers-licence-details'] = drivers_licence_details
+    details[:'passport-details'] = passport_details
+    # Have to exclude medicare if details missing #5519
+    details[:'medicare'] = medicare_details unless medicare_details.empty?
+
+    details
   end
 
   def add_envelope(xml_message, url, username, password, message_id)
