@@ -106,7 +106,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     # Make sure items generated in order #5519
     details = ActiveSupport::OrderedHash.new
-    details[:'consents'] = consents
+    # details[:'consents'] = consents
     details[:'individual-name'] = individual_name
     details[:'date-of-birth'] = date_of_birth
     details[:'gender'] = gender

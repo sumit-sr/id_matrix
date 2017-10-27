@@ -390,8 +390,17 @@ describe VedaIdmatrix::Request do
     end
   end
 
-  describe "entity request order" do
-    it "generates XML doc in order" do
+  describe 'medicare' do
+    it 'should exclude if not defined' do
+      no_mediacare = @entity_hash.dup
+      no_mediacare[:medicare_card_number] = ''
+      @request_no_medicare = VedaIdmatrix::Request.new(access: @access_hash, entity: no_mediacare, enquiry: @enquiry_hash)
+      expect(@request_no_medicare.to_soap).to_not include('<idm:mediacare>')
+    end
+  end
+
+  describe 'entity request order' do
+    it 'generates XML doc in order' do
       data = {:zzz => 98, :xxx=> '765', :mmm => 123, :aaa => 'yo'}
       expect(@request.to_dom('spec', data).to_xml).to eql("<?xml version=\"1.0\"?>\n<spec>\n  <zzz>98</zzz>\n  <xxx>765</xxx>\n  <mmm>123</mmm>\n  <aaa>yo</aaa>\n</spec>\n")
     end
