@@ -10,8 +10,6 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   validates :entity, presence: true
   validates :enquiry, presence: true
 
-  DETAIL_ORDER = [:'individual-name', :'date-of-birth', :'gender', :'current-address', :'phone', :'email-address', :'drivers-licence-details', :'passport-details', :'medicare']
-
   def schema
     fname = File.expand_path( '../../lib/assets/idmatrix-v4-0-12.xsd', File.dirname(__FILE__) )
     File.read(fname)
@@ -31,20 +29,17 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     self.xml = doc.gsub('<idm:?xml version="1.0"?>','')
   end
 
-  def to_dom(node, data, attrs={} )
+  def to_dom(node, data, attrs={})
     doc = Nokogiri::XML::Builder.new do |builder|
       if data.is_a?(Hash) && data.keys.sort == [:attributes, :value]
         attrs.merge!(data[:attributes])
         data = data[:value]
       end
 
-      # Enforce order on details
       if data.is_a? Hash
         builder.send(node, attrs) do
-          DETAIL_ORDER.each do |k|
-            if data.include? k
-              builder << to_dom(k, data[k]).root.to_xml
-            end
+          data.keys.each do |k|
+            builder << to_dom(k, data[k]).root.to_xml
           end
         end
       else
@@ -109,18 +104,17 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:passport_number])
     }
 
-    details = {
-      # :'consents' => consents,
-      :'individual-name' => individual_name,
-      :'date-of-birth' => date_of_birth,
-      :'gender' => gender,
-      :'current-address' => current_address,
-      :'phone' => phone,
-      :'email-address' => email_address,
-      :'drivers-licence-details' => drivers_licence_details,
-      :'passport-details' => passport_details
-    }
-
+    # Make sure items generated in order #5519
+    details = ActiveSupport::OrderedHash.new
+    details[:'consents'] = consents
+    details[:'individual-name'] = individual_name
+    details[:'date-of-birth'] = date_of_birth
+    details[:'gender'] = gender
+    details[:'current-address'] = current_address
+    details[:'phone']=  phone
+    details[:'email-address'] = email_address
+    details[:'drivers-licence-details'] = drivers_licence_details
+    details[:'passport-details'] = passport_details
     # Have to exclude medicare if details missing #5519
     details[:'medicare'] = medicare_details unless medicare_details.empty?
 

@@ -389,5 +389,11 @@ describe VedaIdmatrix::Request do
       expect(@request.to_dom('spec', data).to_xml).to eq("<?xml version=\"1.0\"?>\n<spec>\n  <example>\n  <attributes>\n  <foo>bar</foo>\n</attributes>\n  <not_value>123</not_value>\n</example>\n</spec>\n")
     end
   end
-end
 
+  describe "entity request order" do
+    it "generates XML doc in order" do
+      data = {:zzz => 98, :xxx=> '765', :mmm => 123, :aaa => 'yo'}
+      expect(@request.to_dom('spec', data).to_xml).to eql("<?xml version=\"1.0\"?>\n<spec>\n  <zzz>98</zzz>\n  <xxx>765</xxx>\n  <mmm>123</mmm>\n  <aaa>yo</aaa>\n</spec>\n")
+    end
+  end
+end
