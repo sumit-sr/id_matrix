@@ -393,7 +393,9 @@ describe VedaIdmatrix::Request do
   describe 'medicare' do
     it 'should exclude if not defined' do
       no_mediacare = @entity_hash.dup
-      no_mediacare[:medicare_card_number] = ''
+      keys = [:medicare_card_number, :medicare_reference_number, :medicare_card_color, :medicare_card_expiry]
+      no_mediacare[keys.sample] = ''
+
       @request_no_medicare = VedaIdmatrix::Request.new(access: @access_hash, entity: no_mediacare, enquiry: @enquiry_hash)
       expect(@request_no_medicare.to_soap).to_not include('<idm:mediacare>')
     end
