@@ -110,12 +110,17 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     details[:'current-address'] = current_address
     details[:'phone']=  phone
     details[:'email-address'] = email_address
-    # The search requires that the fields be present to be successful, otherwise we exclude the section
-    details[:'drivers-licence-details'] = drivers_licence_details unless drivers_licence_details.values.any?(&:empty?)
-    details[:'passport-details'] = passport_details unless passport_details.values.any?(&:empty?)
-    details[:'medicare'] = medicare_details unless medicare_details.values.any?(&:empty?)
+
+    #The search requires that the fields be present to be successful, otherwise we exclude the section
+    { 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
+      details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
+    end
 
     details
+  end
+
+  def mandatory_values_empty?(values_hash)
+    values_hash.values.any? {|val| val.nil? || val.to_s.empty?}
   end
 
   def add_envelope(xml_message, url, username, password, message_id)
