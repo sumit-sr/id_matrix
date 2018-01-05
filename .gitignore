@@ -17,3 +17,4 @@ test/version_tmp
 tmp
 lib/config/veda_idmatrix.yml
 dev_config.yml
+.idea/

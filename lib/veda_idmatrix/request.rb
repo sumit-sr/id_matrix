@@ -84,15 +84,12 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     email_address = (self.entity[:email_address])
 
-    medicare_details = {}
-    unless self.entity[:medicare_card_number].blank?
-      medicare_details = {
-        :'card-number' => (self.entity[:medicare_card_number]),
-        :'reference-number' => (self.entity[:medicare_reference_number]),
-        :'card-colour' => (self.entity[:medicare_card_color]),
-        :'date-of-expiry' => (self.entity[:medicare_card_expiry])
-      }
-    end
+    medicare_details = {
+      :'card-number' => (self.entity[:medicare_card_number]),
+      :'reference-number' => (self.entity[:medicare_reference_number]),
+      :'card-colour' => (self.entity[:medicare_card_color]),
+      :'date-of-expiry' => (self.entity[:medicare_card_expiry])
+    }
 
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
@@ -113,12 +110,17 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     details[:'current-address'] = current_address
     details[:'phone']=  phone
     details[:'email-address'] = email_address
-    details[:'drivers-licence-details'] = drivers_licence_details
-    details[:'passport-details'] = passport_details
-    # Have to exclude medicare if details missing #5519
-    details[:'medicare'] = medicare_details unless medicare_details.empty?
+
+    #The search requires that the fields be present to be successful, otherwise we exclude the section
+    { 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
+      details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
+    end
 
     details
+  end
+
+  def mandatory_values_empty?(values_hash)
+    values_hash.values.any? {|val| val.nil? || val.to_s.empty?}
   end
 
   def add_envelope(xml_message, url, username, password, message_id)
