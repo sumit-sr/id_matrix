@@ -101,7 +101,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:passport_number])
     }
 
-    consents = request.entity[:consents]
+    consents = self.entity[:consents]
 
     # Make sure items generated in order #5519
     details = ActiveSupport::OrderedHash.new
