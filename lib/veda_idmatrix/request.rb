@@ -25,7 +25,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
   end
 
   def to_xml_body
-    doc = self.to_dom('request', self.id_matrix_operation, {:'client-reference'=>self.enquiry[:client_reference], :'reason-for-enquiry'=>self.enquiry[:reason_for_enquiry]}).to_xml.gsub(/(<[\/]?)/,'\1idm:')
+    doc = self.to_dom('request', self.id_matrix_operation, {:'client-reference'=>self.enquiry[:client_reference], :enquiry_id => self.enquiry[:enquiry_id], :'reason-for-enquiry'=>self.enquiry[:reason_for_enquiry]}).to_xml.gsub(/(<[\/]?)/,'\1idm:')
     self.xml = doc.gsub('<idm:?xml version="1.0"?>','')
   end
 
@@ -101,6 +101,8 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'number' => (self.entity[:passport_number])
     }
 
+    consents = request.entity[:consents]
+
     # Make sure items generated in order #5519
     details = ActiveSupport::OrderedHash.new
     # details[:'consents'] = consents
@@ -112,7 +114,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     details[:'email-address'] = email_address
 
     #The search requires that the fields be present to be successful, otherwise we exclude the section
-    { 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
+    { 'consents' => consents, 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
       details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
     end
 
