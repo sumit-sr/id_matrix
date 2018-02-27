@@ -127,7 +127,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     details[:'email-address'] = email_address
 
     #The search requires that the fields be present to be successful, otherwise we exclude the section
-    { 'consents' => consents, 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
+    { 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
       details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
     end
 
