@@ -103,8 +103,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
-      :'number' => (self.entity[:drivers_licence_number]),
-      :'name-as-on-document' => (self.entity[:drivers_licence_name])
+      :'number' => (self.entity[:drivers_licence_number])
     }
 
     passport_details = {
@@ -118,7 +117,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     # Make sure items generated in order #5519
     details = ActiveSupport::OrderedHash.new
-    details[:consents] = consents
+    details[:'consents'] = consents
     details[:'individual-name'] = individual_name
     details[:'date-of-birth'] = date_of_birth
     details[:'gender'] = gender
