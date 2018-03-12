@@ -82,17 +82,33 @@ class VedaIdmatrix::Request < ActiveRecord::Base
         :'state' => (self.entity[:current_address][:state]),
         :'postcode' => (self.entity[:current_address][:postcode]),
       }
-      current_address.delete(:'unit-number') if self.entity[:current_address][:unit_number].blank? #rescue true
+      current_address.delete(:'unit-number') if self.entity[:current_address][:unit_number].blank?
+      current_address.delete(:'property') if self.entity[:current_address][:property].blank?
     end
 
-    phone = {
-      :'numbers' => {
-        :'home-phone-number verify="true"' => (self.entity[:home_phone_number]),
-        :'mobile-phone-number verify="true"' => (self.entity[:mobile_phone_number])
+    if self.entity[:previous_address].present?
+      previous_address = {
+        :'property' => (self.entity[:previous_address][:property]),
+        :'unit-number' => (self.entity[:previous_address][:unit_number]),
+        :'street-number' => (self.entity[:previous_address][:street_number]),
+        :'street-name' => (self.entity[:previous_address][:street_name]),
+        :'street-type' => (self.entity[:previous_address][:street_type]),
+        :'suburb' => (self.entity[:previous_address][:suburb]),
+        :'state' => (self.entity[:previous_address][:state]),
+        :'postcode' => (self.entity[:previous_address][:postcode]),
       }
-    }
+      previous_address.delete(:'unit-number') if self.entity[:previous_address][:unit_number].blank?
+      previous_address.delete(:'property') if self.entity[:previous_address][:property].blank?
+    end
 
-    email_address = (self.entity[:email_address])
+    # phone = {
+    #   :'numbers' => {
+    #     :'home-phone-number verify="true"' => (self.entity[:home_phone_number]),
+    #     :'mobile-phone-number verify="true"' => (self.entity[:mobile_phone_number])
+    #   }
+    # }
+
+    # email_address = (self.entity[:email_address])
 
     medicare_details = {
       :'card-number' => (self.entity[:medicare_card_number]),
@@ -123,14 +139,14 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     details[:'date-of-birth'] = date_of_birth
     details[:'gender'] = gender
     details[:'current-address'] = current_address
-    details[:'phone']=  phone
-    details[:'email-address'] = email_address
+    # details[:'previous-address'] = previous_address
+    # details[:'phone']=  phone
+    # details[:'email-address'] = email_address
 
     #The search requires that the fields be present to be successful, otherwise we exclude the section
-    { 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
+    { 'previous-address' => previous_address, 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
       details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
     end
-
     details
   end
 
