@@ -119,8 +119,8 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     drivers_licence_details = {
       :'state-code' => (self.entity[:drivers_licence_state_code]),
-      :'number' => (self.entity[:drivers_licence_number]),
-      :'name-as-on-document' => (self.entity[:drivers_licence_name])
+      :'number' => (self.entity[:drivers_licence_number])
+      # :'name-as-on-document' => (self.entity[:drivers_licence_name])
     }
 
     passport_details = {
