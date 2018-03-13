@@ -115,7 +115,7 @@ class VedaIdmatrix::Request < ActiveRecord::Base
       :'reference-number' => (self.entity[:medicare_reference_number]),
       :'card-colour' => (self.entity[:medicare_card_color]),
       :'date-of-expiry' => (self.entity[:medicare_card_expiry]),
-      :'middle-name-on-card' => ''
+      :'middle-name-on-card' => 'E'
     }
 
     drivers_licence_details = {
