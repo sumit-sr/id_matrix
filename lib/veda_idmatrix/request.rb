@@ -113,9 +113,9 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     medicare_details = {
       :'card-number' => (self.entity[:medicare_card_number]),
       :'reference-number' => (self.entity[:medicare_reference_number]),
-      :'card-colour' => (self.entity[:medicare_card_color]),
+      :'middle-name-on-card' => (self.entity[:medicare_name_on_card]),
       :'date-of-expiry' => (self.entity[:medicare_card_expiry]),
-      :'middle-name-on-card' => 'E'
+      :'card-colour' => (self.entity[:medicare_card_color])
     }
 
     drivers_licence_details = {
@@ -146,7 +146,13 @@ class VedaIdmatrix::Request < ActiveRecord::Base
 
     #The search requires that the fields be present to be successful, otherwise we exclude the section
     { 'previous-address' => previous_address, 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
-      details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
+      if section.eql?('medicare')
+        values.delete(:"middle-name-on-card") if values[:"middle-name-on-card"].blank?
+        details[:"#{section}"] = medicare_details unless self.mandatory_values_empty?(values)
+      else
+        details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
+      end
+
     end
     details
   end
