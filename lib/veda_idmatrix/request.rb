@@ -147,12 +147,10 @@ class VedaIdmatrix::Request < ActiveRecord::Base
     #The search requires that the fields be present to be successful, otherwise we exclude the section
     { 'previous-address' => previous_address, 'drivers-licence-details' => drivers_licence_details, 'passport-details' => passport_details, 'medicare' => medicare_details}.each do |section, values|
       if section.eql?('medicare')
-        values.delete(:"middle-name-on-card") if values[:"middle-name-on-card"].blank?
-        details[:"#{section}"] = medicare_details unless self.mandatory_values_empty?(values)
+        details[:"#{section}"] = medicare_details unless values.values.any? {|val| val.nil?}
       else
         details[:"#{section}"] = values unless self.mandatory_values_empty?(values)
       end
-
     end
     details
   end
